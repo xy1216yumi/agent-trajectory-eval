@@ -18,6 +18,10 @@ LLM-as-judge 标注 + 人工抽检 Cohen's Kappa = 0.85）：
 | 架构性失败无法被交互挽救 | 2 条未挽救均为无工具的直调组——纠正信息救不了架构缺陷 |
 
 完整数据见 [`data/reports/stats_report.md`](data/reports/stats_report.md)。
+
+**在线 Demo**：[单轨迹诊断报告（HTML）](https://xy1216yumi.github.io/agent-trajectory-eval/data/reports/demo_report.html)
+——输入一条轨迹 JSONL，自动输出检查点标签、偏离定位与成本分析（由 `src/monitor.py` 生成，
+示例为一条"工具误报 + Agent 编造 URL"的复合失效真实轨迹）。
 统计方法：Spearman 置换检验 / McNemar 精确检验 / Bootstrap CI / Cohen's Kappa，
 全部用标准库手写实现（`src/analyze.py`），不显著的结果如实标注，不硬凑结论。
 

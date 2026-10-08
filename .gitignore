@@ -1,0 +1,28 @@
+# Environment variables (contains secrets)
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# LangGraph local files
+.langgraph_api/
+
+# IDE settings (optional)
+.vscode/
+.idea/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+# Mock 备份数据（可用 seed 复现，不入库）
+data_mock_backup/
+
+# 原始规划文档（个人材料，不入库）
+*.docx

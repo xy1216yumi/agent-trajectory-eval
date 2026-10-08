@@ -1,0 +1,7 @@
+# mock 模式：零依赖，Python 标准库即可运行全部管线
+# （统计检验全部由 src/analyze.py 手写实现，无需 scipy/numpy）
+
+# 以下为可选依赖，仅 real 模式（真实 LLM 轨迹采集）需要：
+# langchain
+# langchain-openai
+# langgraph        # langchain 1.x 的 ReAct Agent 在 langgraph.prebuilt 中

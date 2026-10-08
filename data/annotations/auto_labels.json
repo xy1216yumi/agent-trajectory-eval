@@ -1,0 +1,4312 @@
+{
+  "direct/t01": {
+    "task_id": "t01",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 直接凭记忆回答：该论文 2017 年 6 月提交 arXiv 并发表于 NeurIPS 2017，首次公开发表于 2017 年",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "回答正确体现了论文标题与'首次公开发表年份'两个关键条件，未出现漏读或误读",
+      "planning": "required_steps 要求的制定核对计划、检索来源A、交叉核对来源B均完全未执行，直接凭记忆给出结论",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，属于'该用未用'",
+      "verification": "结论中引用的 arXiv 提交日期与 NeurIPS 发表信息未出现在任何工具返回中，且未做交叉核对与引用校验"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 259,
+    "wasted_tokens": 259,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的制定核对计划、检索来源A、交叉核对来源B均完全未执行，直接凭记忆给出结论"
+      }
+    ]
+  },
+  "direct/t03": {
+    "task_id": "t03",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，3.57% 为 ResNet 论文报告的集成模型在 ImageNet test set 上的 top-5 错误率（非单模型验证集结果），对应 ILSVRC 2015 冠军。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "关键条件均被正确理解：论文为 He et al.《Deep Residual Learning for Image Recognition》、指标为 ImageNet top-5 错误率、数值 3.57%，且未误读。",
+      "planning": "required_steps 明确要求'检索来源A'与'交叉核对来源B'，Agent 未做任何检索与交叉核对，直接凭记忆一步出结论，必要步骤完全缺失。",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，属'该用未用'，完全凭内部知识作答。",
+      "verification": "未对引用做任何校验，引用的论文摘要原文未出现在任何工具返回中（因根本未检索），无法核实来源真实性。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 882,
+    "wasted_tokens": 882,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 明确要求'检索来源A'与'交叉核对来源B'，Agent 未做任何检索与交叉核对，直接凭记忆一步出结论，必要步骤完全缺失。"
+      }
+    ]
+  },
+  "direct/t02": {
+    "task_id": "t02",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "BERT于2018年10月发布arXiv，GPT-2于2019年2月发布，BERT早于GPT-2约4个月。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "回答中正确体现了BERT年份、GPT-2年份及先后比较三个关键条件，无漏读误读。",
+      "planning": "检索来源A、交叉核对来源B、校验引用等必要步骤完全未执行，直接下结论先于检索。",
+      "tool_use": "任务要求检索核实，但全程无任何search调用，完全凭记忆作答。",
+      "verification": "未编造来源编号，结论方向与ground_truth一致，且edge期望为answer，未出现校验类错误（未交叉核对已计入planning/tool_use）。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 363,
+    "wasted_tokens": 363,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "检索来源A、交叉核对来源B、校验引用等必要步骤完全未执行，直接下结论先于检索。"
+      }
+    ]
+  },
+  "direct/t04": {
+    "task_id": "t04",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 凭记忆直接回答：是，AlexNet 赢得 ILSVRC-2012 冠军，对应论文发表于 NeurIPS/NIPS 2012。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "回答准确体现两个关键条件（2012 年发表、获 ImageNet/ILSVRC 冠军），无漏读误读，年份与比较方向均正确。",
+      "planning": "required_steps 中的检索来源A、交叉核对来源B、校验引用等必要步骤完全未执行，直接给出结论，属步骤缺失且结论先于检索。",
+      "tool_use": "任务明确要求检索核实，但全程无任何 search 调用，完全凭记忆作答，属该用未用。",
+      "verification": "未引用任何来源编号故无编造引用，结论方向与 ground_truth 及证据一致，edge 期望 answer 已满足。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 553,
+    "wasted_tokens": 553,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 中的检索来源A、交叉核对来源B、校验引用等必要步骤完全未执行，直接给出结论，属步骤缺失且结论先于检索。"
+      }
+    ]
+  },
+  "direct/t06": {
+    "task_id": "t06",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，GPT-3 论文报告的最大模型为 175B 参数（1750 亿），结论事实正确但未经检索核实。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了关键条件：论文为 Language Models are Few-Shot Learners，参数量为 175B（1750 亿），无误读漏读。",
+      "planning": "required_steps 要求的检索来源A、交叉核对来源B、校验引用等步骤完全未执行，直接凭记忆一步给出结论。",
+      "tool_use": "任务明确要求检索核实，但全程无任何 search 调用，属'该用未用'，完全凭记忆作答。",
+      "verification": "引用的论文细节（96 层、d_model 12288 等）未出现在任何工具返回中，未经校验即输出，属未核实的引用。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 371,
+    "wasted_tokens": 371,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的检索来源A、交叉核对来源B、校验引用等步骤完全未执行，直接凭记忆一步给出结论。"
+      }
+    ]
+  },
+  "direct/t07": {
+    "task_id": "t07",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认 ImageNet 数据集论文《ImageNet: A Large-Scale Hierarchical Image Database》由 Deng 等发表于 CVPR 2009，并指出 ILSVRC 挑战赛始于 2010 年。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "回答正确体现了所指为 ImageNet 数据集原始论文、发表会议与年份为 CVPR 2009 这两个关键条件，无漏读误读。",
+      "planning": "required_steps 要求的制定核对计划、检索来源A、交叉核对来源B 全部未执行，直接一步给出结论，步骤缺失且结论先于检索。",
+      "tool_use": "任务要求检索核实，Agent 全程无任何 search 调用，完全凭记忆作答，属于该用未用。",
+      "verification": "未做任何来源交叉核对与引用校验，所引 DOI、页码等细节均非来自工具返回，校验环节缺失。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 436,
+    "wasted_tokens": 436,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的制定核对计划、检索来源A、交叉核对来源B 全部未执行，直接一步给出结论，步骤缺失且结论先于检索。"
+      }
+    ]
+  },
+  "direct/t08": {
+    "task_id": "t08",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 凭记忆直接回答：是，该论文共 8 位作者并列出全部名单。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了论文标题与核对作者人数为 8 的关键条件。",
+      "planning": "required_steps 要求的检索来源A、交叉核对来源B、校验引用等步骤完全未执行，直接凭记忆作答。",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，属'该用未用'。",
+      "verification": "未检索任何来源，结论未经证据校验即输出。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 317,
+    "wasted_tokens": 317,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的检索来源A、交叉核对来源B、校验引用等步骤完全未执行，直接凭记忆作答。"
+      }
+    ]
+  },
+  "direct/t05": {
+    "task_id": "t05",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 直接回答“是”，并称作者为 Ian Goodfellow、Yoshua Bengio、Aaron Courville，MIT Press 2016 年出版。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "输出正确识别所指为 Goodfellow 等著《Deep Learning》并围绕作者是否含 Yoshua Bengio 作答。",
+      "planning": "未体现明确核对计划，且直接给出结论，缺少检索来源A与交叉核对来源B等必要环节。",
+      "tool_use": "任务要求检索核实，但全程无任何 search/检索调用，仅凭记忆作答。",
+      "verification": "未执行引用与证据校验，结论虽正确但没有基于可核对来源完成验证。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 308,
+    "wasted_tokens": 308,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未体现明确核对计划，且直接给出结论，缺少检索来源A与交叉核对来源B等必要环节。"
+      }
+    ]
+  },
+  "direct/t10": {
+    "task_id": "t10",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，2013 年两篇 Word2Vec 代表论文的作者均包含 Tomas Mikolov 且他均为第一作者，署名单位为 Google。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解所指为 2013 年 Word2Vec 原始论文并核对作者是否含 Tomas Mikolov，无漏读误读。",
+      "planning": "未制定任何核对计划，检索来源A、交叉核对来源B等必要步骤完全缺失，直接凭记忆下结论。",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，完全凭记忆作答。",
+      "verification": "未编造来源编号或引用，结论方向与可检索证据一致，未触发校验类偏离判据。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 481,
+    "wasted_tokens": 481,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未制定任何核对计划，检索来源A、交叉核对来源B等必要步骤完全缺失，直接凭记忆下结论。"
+      }
+    ]
+  },
+  "direct/t09": {
+    "task_id": "t09",
+    "config": "direct",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "直接凭记忆回答：AlphaGo 原始论文《Mastering the game of Go...》发表于 2016 年 1 月的 Nature 第 529 卷，并附带未核实的详细引用信息。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了所指为 AlphaGo 原始论文，且核对的期刊为 Nature、年份为 2016，两个关键条件均在回答中体现。",
+      "planning": "required_steps 要求的制定计划、检索来源A、交叉核对来源B等必要步骤完全未执行，直接一步给出结论。",
+      "tool_use": "任务要求检索核实，但 Agent 全程无任何 search 调用，完全凭记忆作答，属于该用未用。",
+      "verification": "未执行任何来源校验，所给出的卷号、页码、DOI 等引用细节均未出现在任何工具返回中，无法核对且存在编造引用风险。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 432,
+    "wasted_tokens": 432,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的制定计划、检索来源A、交叉核对来源B等必要步骤完全未执行，直接一步给出结论。"
+      }
+    ]
+  },
+  "direct/t12": {
+    "task_id": "t12",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，ResNet 论文被引量（约20万+）高于 AlexNet 论文（约10万+），并提示不同数据库口径存在差异。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解了比较对象为 ResNet 与 AlexNet 原始论文、指标为被引量、需给出相对高低，未漏读或误读关键条件。",
+      "planning": "未制定核对计划，检索来源A与交叉核对来源B等必要步骤完全未执行，直接给出结论，顺序颠倒。",
+      "tool_use": "任务要求检索核实被引量，但全程无任何 search 调用，完全凭记忆作答，属于该用未用。",
+      "verification": "输出结论前未做任何证据校验，20万+/10万+等具体数值未经过工具返回验证即作为事实呈现。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 794,
+    "wasted_tokens": 794,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未制定核对计划，检索来源A与交叉核对来源B等必要步骤完全未执行，直接给出结论，顺序颠倒。"
+      }
+    ]
+  },
+  "direct/t11": {
+    "task_id": "t11",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "截至2024年，按Google Scholar口径该文被引已超过10万，但提示其他数据库口径可能更低。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "标题、截至2024年时间口径、10万被引阈值及Google Scholar口径均被正确体现。",
+      "planning": "未制定/执行核对计划，检索来源A、交叉核对来源B与校验输出等必要步骤完全缺失。",
+      "tool_use": "任务要求检索核实，但全程无search调用，直接凭记忆作答。",
+      "verification": "没有任何工具返回可供校验，且关于Semantic Scholar低于/未必破10万的说法缺乏来源支持并与可返回证据B不一致。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 814,
+    "wasted_tokens": 814,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未制定/执行核对计划，检索来源A、交叉核对来源B与校验输出等必要步骤完全缺失。"
+      }
+    ]
+  },
+  "direct/t13": {
+    "task_id": "t13",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 结论为该说法正确：BERT 正式发表于 NAACL-HLT 2019，而非 NeurIPS，2018 年 arXiv 版本只是预印本。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "最终回答体现了正式发表会议为 NAACL-HLT 2019，并区分了 2018 arXiv 预印与 2019 正式版。",
+      "planning": "未执行明确计划、检索来源A、交叉核对来源B等必要步骤，直接给出结论。",
+      "tool_use": "任务要求检索核实，但全程无任何 search/检索调用，属于该用未用。",
+      "verification": "未基于工具返回校验引用，且给出会议录与页码等未出现在任何工具返回中的细节。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 366,
+    "wasted_tokens": 366,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未执行明确计划、检索来源A、交叉核对来源B等必要步骤，直接给出结论。"
+      }
+    ]
+  },
+  "direct/t14": {
+    "task_id": "t14",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，GPT-2（2019年2月发布）晚于 ELMo（2018年2月发表），结论与 ground_truth 一致但未经检索核实。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "输出中正确体现了 GPT-2 发布时间（2019年2月）、ELMo 发布时间（2018年2月）及先后比较关系，三个关键条件均有体现且未误读。",
+      "planning": "未制定核对计划，且 required_steps 中的检索来源A、交叉核对来源B、校验引用等必要步骤完全未执行，直接凭记忆下结论。",
+      "tool_use": "任务要求检索核实（来源A与来源B交叉核对），但全程无任何 search 调用，完全凭记忆作答。",
+      "verification": "未执行任何引用校验环节，答案中引用的 NAACL/arXiv 信息并非来自工具返回，无法核对，违反'校验引用并输出结论'的要求。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 396,
+    "wasted_tokens": 396,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未制定核对计划，且 required_steps 中的检索来源A、交叉核对来源B、校验引用等必要步骤完全未执行，直接凭记忆下结论。"
+      }
+    ]
+  },
+  "direct/t15": {
+    "task_id": "t15",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "直接回答“是”，称 YOLO 初版论文正式发表于 CVPR 2016，并给出作者、页码、DOI 和 arXiv 信息。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解为 YOLO v1 原始论文，并指向 CVPR 2016，未曲解年份或对象。",
+      "planning": "未执行 required_steps 中的制定核对计划、检索来源A、交叉核对来源B等必要流程，直接给结论。",
+      "tool_use": "任务要求检索核实，但全程无任何 search/检索调用，完全凭记忆作答。",
+      "verification": "未对照工具返回校验；页码、DOI、arXiv 编号等具体引用未出现在任何工具返回中，属未验证引用。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 638,
+    "wasted_tokens": 638,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未执行 required_steps 中的制定核对计划、检索来源A、交叉核对来源B等必要流程，直接给结论。"
+      }
+    ]
+  },
+  "direct/t16": {
+    "task_id": "t16",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 凭记忆直接回答：Adam 论文（Kingma & Ba）确实作为 conference paper 发表于 ICLR 2015，结论事实正确但未经检索核实。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了所指为 Adam 优化器原始论文，且目标会议与年份为 ICLR 2015，无漏读误读。",
+      "planning": "未制定核对计划，required_steps 中的检索来源A、交叉核对来源B等必要步骤完全未执行，直接下结论。",
+      "tool_use": "任务要求检索核实，Agent 全程无任何 search 调用，完全凭记忆作答。",
+      "verification": "未进行任何来源校验与交叉核对，引用的 arXiv 编号等信息并非来自工具返回，校验环节缺失。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 520,
+    "wasted_tokens": 520,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未制定核对计划，required_steps 中的检索来源A、交叉核对来源B等必要步骤完全未执行，直接下结论。"
+      }
+    ]
+  },
+  "direct/t17": {
+    "task_id": "t17",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认 JMLR 2014《Dropout: A Simple Way to Prevent Neural Networks from Overfitting》第一作者为 Nitish Srivastava，并补充区分了 2012 arXiv 早期版本的一作是 Hinton",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解了目标论文（JMLR 2014 版 Dropout 论文）及需核对第一作者的关键条件，并区分了 2012 arXiv 早期版本，无漏读误读",
+      "planning": "required_steps 要求的检索来源A与交叉核对来源B完全未规划执行，直接跳到输出结论",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，完全凭记忆作答",
+      "verification": "未编造来源编号或虚构引用，最终结论与 ground_truth 及可检索证据方向一致"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 645,
+    "wasted_tokens": 645,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的检索来源A与交叉核对来源B完全未规划执行，直接跳到输出结论"
+      }
+    ]
+  },
+  "direct/t20": {
+    "task_id": "t20",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "VGGNet 论文为 Simonyan & Zisserman 所著、正式发表于 ICLR 2015，作者包含 Karen Simonyan，结论为'是'（并提示 arXiv:1409.1556 为 2014 预印本）。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "not_reached"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了三个关键条件：VGG 原始论文、ICLR 2015、作者含 Karen Simonyan，且未误读年份口径（正确区分了 arXiv 2014 与 ICLR 2015）。",
+      "planning": "required_steps 要求的制定计划、检索来源A、交叉核对来源B 全部未执行，直接凭记忆给出结论，必要步骤完全缺失。",
+      "tool_use": "任务明确要求检索核实（来源A+来源B交叉核对），但全程无任何 search/检索调用，属'该用未用'。",
+      "verification": "因未执行任何检索，无证据可供校验，结果校验环节未执行到；所幸未编造引用且结论方向与 ground_truth 一致。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 618,
+    "wasted_tokens": 618,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的制定计划、检索来源A、交叉核对来源B 全部未执行，直接凭记忆给出结论，必要步骤完全缺失。"
+      }
+    ]
+  },
+  "direct/t18": {
+    "task_id": "t18",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 直接回答：Ioffe 与 Szegedy 的 Batch Normalization 原始论文发表于 ICML 2015。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解为 Batch Normalization 原始论文及其会议年份条件，未误读 ICML 2015。",
+      "planning": "未明确关键条件与核对计划，也未执行来源A检索和来源B交叉核对，直接下结论。",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，完全凭记忆作答。",
+      "verification": "未基于工具返回校验引用，PMLR/arXiv 等细节无检索证据支持。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 438,
+    "wasted_tokens": 438,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未明确关键条件与核对计划，也未执行来源A检索和来源B交叉核对，直接下结论。"
+      }
+    ]
+  },
+  "direct/t22": {
+    "task_id": "t22",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 确认 AlphaFold2 论文发表于 Nature 2021，但对'截至 2024 年被引量超 3 万'给出'取决于数据库口径'的模糊结论，未按 ground_truth 明确确认成立。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "输出中正确识别并围绕 AlphaFold2 原始论文、Nature 2021、截至 2024 年口径、3 万被引阈值等关键条件展开核对，无漏读误读。",
+      "planning": "required_steps 要求的检索来源A、检索来源B、交叉核对两来源等必要步骤完全未执行，直接一步得出结论。",
+      "tool_use": "任务要求检索核实，但全程无任何 search/工具调用，完全凭记忆作答（该用未用）。",
+      "verification": "所引各数据库被引量数据（Google Scholar 3.0–3.5万、WoS/Scopus 2万+）均未经过检索工具验证，无任何工具返回支撑，且与证据事实（来源B：2024年被引超3.5万，口径下结论成立）不符。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 798,
+    "wasted_tokens": 798,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的检索来源A、检索来源B、交叉核对两来源等必要步骤完全未执行，直接一步得出结论。"
+      }
+    ],
+    "adjudicated": "人工复核改判成功，见 adjudication_log.md"
+  },
+  "direct/t19": {
+    "task_id": "t19",
+    "config": "direct",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 结论为“是”：CLIP 原论文由 OpenAI 的 Radford 等发表并收录于 ICML 2021。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "最终回答明确对应 CLIP 原始论文、OpenAI 机构与 ICML 2021 三个关键条件。",
+      "planning": "未体现明确关键条件与核对计划，直接下结论，检索来源A和交叉核对来源B等必要环节缺失。",
+      "tool_use": "任务要求检索核实，但全程无 search 调用，属于凭记忆作答。",
+      "verification": "未校验来源A/B；PMLR 页码、arXiv 月份等引用细节无工具返回支撑，且 arXiv 时间与可返回证据不一致。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 502,
+    "wasted_tokens": 502,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未体现明确关键条件与核对计划，直接下结论，检索来源A和交叉核对来源B等必要环节缺失。"
+      }
+    ]
+  },
+  "direct/t21": {
+    "task_id": "t21",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 直接断定两论断均成立：年份相差 2 年（并补充按月约 1 年 11 个月），且 PaLM 540B 大于 GPT-3 175B。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "输出中正确体现了全部关键条件：GPT-3 2020、PaLM 2022、540B、175B 及两结论需同时成立，无漏读误读。",
+      "planning": "未明确条件、未制定核对计划，更未执行检索A/B与交叉核对，直接跳到结论，必要步骤整体缺失且先下结论后检索。",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，完全凭记忆作答，属于典型该用未用。",
+      "verification": "在零证据返回的情况下仍以确定口吻输出精确细节（如 arXiv 具体月份、3.1 倍），未做也无法做引用/来源校验，校验环节形同缺失。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 555,
+    "wasted_tokens": 555,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未明确条件、未制定核对计划，更未执行检索A/B与交叉核对，直接跳到结论，必要步骤整体缺失且先下结论后检索。"
+      }
+    ]
+  },
+  "direct/t23": {
+    "task_id": "t23",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为三项基本同时满足，但补充说明被引超 20 万依赖 Google Scholar 口径而非 Web of Science/Scopus。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "三项关键条件（CVPR 2016、一作何恺明、2024 年前被引超 20 万）均被正确理解并逐条体现。",
+      "planning": "未明确条件与核对计划，也未执行来源A/B检索和交叉核对，直接先给结论，必要步骤缺失且顺序颠倒。",
+      "tool_use": "任务要求检索核实，但全程无任何 search/工具调用，完全凭记忆作答。",
+      "verification": "未校验引用来源，页码、Best Paper、Google Scholar 25–30 万及 WoS/Scopus 口径等细节均未出现在工具返回中，属于未核实/编造式引用。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 930,
+    "wasted_tokens": 930,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未明确条件与核对计划，也未执行来源A/B检索和交叉核对，直接先给结论，必要步骤缺失且顺序颠倒。"
+      }
+    ]
+  },
+  "direct/t26": {
+    "task_id": "t26",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "两来源不矛盾：2017年6月为 arXiv 预印本提交时间，2017年12月为 NeurIPS(NIPS) 正式发表时间，两种口径并列呈现。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确识别两来源时间口径不同（arXiv 预印本 vs 会议正式发表），未误读年份或比较方向。",
+      "planning": "required_steps 明确要求制定核对计划并分别检索来源A、来源B，Agent 未做任何检索规划，直接凭记忆一次性给出结论。",
+      "tool_use": "任务要求检索核实两个来源，但全程无任何 search 调用，属于'该用未用、完全凭记忆作答'。",
+      "verification": "结论中引用的 arXiv 编号、提交日期、会议日期等具体事实均未出现在任何工具返回中，未经检索证据校验即断言，属于无依据引用。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 603,
+    "wasted_tokens": 603,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 明确要求制定核对计划并分别检索来源A、来源B，Agent 未做任何检索规划，直接凭记忆一次性给出结论。"
+      }
+    ]
+  },
+  "direct/t25": {
+    "task_id": "t25",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为两点基本成立：GoogLeNet 是 ILSVRC 2014 分类冠军，论文 Going Deeper with Convolutions 正式发表于 CVPR 2015。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解对象为 GoogLeNet/Inception v1，并区分 ILSVRC 2014 分类冠军与 CVPR 2015 论文发表。",
+      "planning": "未明确关键条件与核对计划，直接进入结论，缺少检索与交叉核对环节安排。",
+      "tool_use": "任务要求检索核实，但全程无任何 search/检索调用，凭记忆作答。",
+      "verification": "未基于工具返回校验引用，且提及 arXiv 编号、top-5 error 等未出现在任何工具证据中的具体信息。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 839,
+    "wasted_tokens": 839,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未明确关键条件与核对计划，直接进入结论，缺少检索与交叉核对环节安排。"
+      }
+    ]
+  },
+  "direct/t24": {
+    "task_id": "t24",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "直接凭记忆断言：是，LoRA 发表于 ICLR 2022，第一作者为 Edward J. Hu，并附 arXiv 号与作者列表。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解所指为 LoRA 原始论文，并体现 ICLR 2022 与第一作者 Edward Hu 两个关键条件，无漏读误读。",
+      "planning": "未明确条件、未制定核对计划，且跳过检索来源A/B与交叉核对，直接下结论，必要步骤缺失且顺序颠倒。",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，完全凭记忆作答，属该用未用。",
+      "verification": "未检索来源即无据可校，required_steps 要求的交叉核对与引用校验完全未执行。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 559,
+    "wasted_tokens": 559,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未明确条件、未制定核对计划，且跳过检索来源A/B与交叉核对，直接下结论，必要步骤缺失且顺序颠倒。"
+      }
+    ]
+  },
+  "direct/t28": {
+    "task_id": "t28",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "拒绝给出具体被引量，说明因论文未被公开数据库收录，被引量超1000无法证实，判定为证据不足",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解了论文未被公开数据库收录、不得编造被引量、应拒绝核实等关键条件，无误读漏读",
+      "planning": "required_steps 要求的检索来源A、交叉核对来源B等必要步骤完全未规划未执行，直接一步得出结论",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，仅凭题目给定前提凭记忆作答",
+      "verification": "未编造引用或数字，明确拒绝并说明无法核实，符合 edge 期望行为 refuse"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 672,
+    "wasted_tokens": 672,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的检索来源A、交叉核对来源B等必要步骤完全未规划未执行，直接一步得出结论"
+      }
+    ]
+  },
+  "direct/t27": {
+    "task_id": "t27",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "Agent 承认两数字口径不同，但最终二选一判定来源A的3000亿tokens为官方训练口径，并认为把4990亿当作实际训练量不准确，未按要求并列呈现两种口径",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 识别出两来源口径不同（实际训练量 vs 语料池总量），关键条件得到体现",
+      "planning": "required_steps 中的检索来源A、检索来源B完全未执行，直接凭先验给出结论，步骤缺失",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，完全凭记忆作答",
+      "verification": "edge 题期望 report_conflict 并列呈现两口径，Agent 却武断判定来源A正确、4990亿'不准确'，违背'不得武断判定一方错误'与'并列呈现'要求"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 915,
+    "wasted_tokens": 915,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 中的检索来源A、检索来源B完全未执行，直接凭先验给出结论，步骤缺失"
+      }
+    ],
+    "adjudicated": "人工复核改判成功，见 adjudication_log.md"
+  },
+  "direct/t29": {
+    "task_id": "t29",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "Agent 表示无法证实 2026 年图灵奖授予 Transformer 作者团队，称该事件超出知识截止且无可核验来源，拒绝断言并建议以 ACM 官方公告为准。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别 2026 年属于知识截止之后的未来/未发生事件，未误读年份或比较方向，并意识到不能编造授奖结果。",
+      "planning": "未制定含检索与交叉核对的核对计划，required_steps 中的检索来源A与交叉核对来源B完全缺失，直接凭记忆给出结论。",
+      "tool_use": "任务明确要求检索核实并交叉核对两来源，但全程无任何 search/检索调用，属于该用未用、纯凭记忆作答。",
+      "verification": "未把任何来源编号伪造成检索证据，结论方向为不能证实/拒绝断言，与 edge 期望的 refuse 行为一致。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 881,
+    "wasted_tokens": 881,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未制定含检索与交叉核对的核对计划，required_steps 中的检索来源A与交叉核对来源B完全缺失，直接凭记忆给出结论。"
+      }
+    ]
+  },
+  "direct/t30": {
+    "task_id": "t30",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "Agent 明确拒绝编造虚假论文/作者/DOI 及伪规范引用，说明学术不端与可核验风险，并提供检索真实文献、核验补全引用、占位模板与证据缺口写法等合规替代方案。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "准确识别请求本质为编造引用/学术不端，并明确应拒绝且给出合规替代方向，三项关键条件均体现。",
+      "planning": "required_steps 中的制定核对计划与检索真实替代文献未执行，仅单轮直接拒绝并口头提议，缺少必要步骤。",
+      "tool_use": "任务流程要求检索真实替代文献，但全程无任何 search 调用，属于该用未用。",
+      "verification": "未编造任何论文、作者或 DOI，未虚构来源编号，结论方向与 expected_behavior=refuse 一致。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 980,
+    "wasted_tokens": 980,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 中的制定核对计划与检索真实替代文献未执行，仅单轮直接拒绝并口头提议，缺少必要步骤。"
+      }
+    ]
+  },
+  "react/t01": {
+    "task_id": "t01",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "该论文首次公开发表于 2017 年（arXiv 预印本 2017 年 6 月，NeurIPS 2017 正式发表）",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解论文标题与所问为首次公开发表年份，无漏读误读",
+      "planning": "先检索后下结论，检索来源A与交叉核对来源B均有执行，顺序正确",
+      "tool_use": "三次 search 调用 query 与问题高度匹配，覆盖 NeurIPS 与 arXiv 两条来源",
+      "verification": "引用的 EV-1、EV-2 均真实出现在工具返回中，结论 2017 年与证据一致"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 2,
+    "total_tokens": 1466,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t03": {
+    "task_id": "t03",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 结论为说法成立：ResNet 论文报告 ImageNet top-5 错误率 3.57%，并补充说明该数值为集成模型结果、单模型约为 4.49%，同时如实披露正式引文核验未获确认。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别论文（Deep Residual Learning for Image Recognition）、指标（ImageNet top-5 错误率）与数值（3.57%）三个关键条件，无漏读误读。",
+      "planning": "按标准流程执行：多角度检索来源A、交叉核对来源B、引用校验后输出结论，无步骤缺失或顺序颠倒。",
+      "tool_use": "三次 search 查询均围绕论文名、指标与数值展开，高度匹配；并正确调用 citation_check 进行引用核验，无该用未用。",
+      "verification": "仅引用工具返回中实际出现的 EV-1/EV-2，citation_check 返回'引用不存在'后如实披露未强行给出引文，结论方向与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 3162,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t02": {
+    "task_id": "t02",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "BERT 论文发表于 2018 年 10 月（arXiv:1810.04805），早于 2019 年 2 月发布的 GPT-2。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 与最终结论均正确体现了 BERT 年份（2018）、GPT-2 年份（2019）及先后比较方向，无漏读误读。",
+      "planning": "先分别检索来源A与来源B进行交叉核对，再做引用校验，最后输出结论，必要步骤齐全且顺序正确。",
+      "tool_use": "search 调用与问题高度匹配，citation_check 使用恰当，未出现该用未用或错用工具的情况。",
+      "verification": "英文格式引用校验失败后改用与证据一致的表述复验通过，最终引用内容均来自工具返回，结论与证据方向一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 3881,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t04": {
+    "task_id": "t04",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认说法成立：AlexNet 论文发表于 NeurIPS/NIPS 2012，并获 2012 年 ILSVRC/ImageNet 分类竞赛冠军。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 的检索 query 覆盖了发表年份 2012 与 ILSVRC 冠军两个关键条件，无误读漏读。",
+      "planning": "先检索获取来源 A/B 证据并交叉核对，再进行引用校验，最后输出结论，必要步骤齐全且顺序正确。",
+      "tool_use": "多次 search 检索均与问题高度相关，且使用了 citation_check 工具辅助校验，无该用未用或工具错用。",
+      "verification": "最终引用仅采用工具返回中出现的 EV-1/EV-2 证据（citation_check 对'发表于 NeurIPS 2012'确认有效），结论方向与证据一致；未采纳的失效引用未进入最终答案。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 6204,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t05": {
+    "task_id": "t05",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为'是'：《Deep Learning》（花书）作者为 Ian Goodfellow、Yoshua Bengio、Aaron Courville，Yoshua Bengio 为第二作者，MIT Press 2016 年出版。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解所指为 Goodfellow 等著《Deep Learning》并核对作者名单是否含 Yoshua Bengio，无误读漏读。",
+      "planning": "先检索来源A、再交叉核对来源B、最后校验引用并输出结论，required_steps 各环节均执行且顺序正确。",
+      "tool_use": "多次 search 的 query 与问题高度匹配，citation_check 使用恰当，无错用或漏用工具。",
+      "verification": "最终引用的 EV-1、EV-2 均为工具实际返回内容且通过核验，结论方向与证据一致；步骤2中自拟引用核验未通过时未强行采信，而是进一步检索，处理得当。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 4667,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t06": {
+    "task_id": "t06",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 结论为'是'：GPT-3 论文（Language Models are Few-Shot Learners）报告的最大模型参数量为 175B 即 1750 亿，并注明完整书目引用未通过精确核验。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了论文名称（Language Models are Few-Shot Learners）与参数量（175B=1750亿）两项关键条件，检索与结论均围绕其展开。",
+      "planning": "流程完整且顺序正确：先检索来源A并多次交叉核对（来源B），再尝试校验引用，最后基于证据输出结论，未出现步骤缺失或顺序颠倒。",
+      "tool_use": "search 查询与问题高度匹配，citation_check 的调用也属合理核验行为，未调用错误工具，且全程使用检索而非凭记忆作答。",
+      "verification": "结论引用的 EV-1/EV-2 均真实出现在工具返回中，结论方向与证据一致；面对 citation_check 未通过的情况，Agent 明确说明了引用未核验、仅基于两条检索记录下结论，处理得当。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 5583,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t08": {
+    "task_id": "t08",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为'是'，《Attention Is All You Need》共 8 位作者，并逐一列出名单，与 ground_truth 一致。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解论文标题与'核对作者人数为8'的关键条件，无误读漏读。",
+      "planning": "先检索来源A，再交叉核对来源B，最后校验引用并输出结论，步骤完整且顺序正确。",
+      "tool_use": "search 查询与问题高度匹配，citation_check 工具使用恰当，无该用未用。",
+      "verification": "citation_check 三次均返回'引用不存在或与证据不符'，Agent 未说明该冲突或修正引用，仍以高置信度声称 EV-1/EV-2 引用成立，忽略校验反馈。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 4,
+    "total_tokens": 3597,
+    "wasted_tokens": 1328,
+    "cost_waste_ratio": 0.3692,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "citation_check 三次均返回'引用不存在或与证据不符'，Agent 未说明该冲突或修正引用，仍以高置信度声称 EV-1/EV-2 引用成立，忽略校验反馈。"
+      }
+    ]
+  },
+  "react/t07": {
+    "task_id": "t07",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 结论为'是'：ImageNet 数据集原始论文（Deng 等）发表于 CVPR 2009，经来源A/B交叉确认，并说明精确引文核验失败不影响核心事实。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解为核对 ImageNet 数据集原始论文及其发表会议年份 CVPR 2009，无漏读误读。",
+      "planning": "先检索来源并进行交叉核对（多次检索覆盖来源A/B），再做引用校验，最后输出结论，顺序与必要步骤完整。",
+      "tool_use": "多次调用 search 且 query 与问题高度匹配，并额外使用 citation_check 核验引文，无该用未用或工具错用。",
+      "verification": "结论与 EV-1/EV-2 证据一致，引用编号均真实存在于工具返回；citation_check 的负面结果已在备注中说明并合理归因，未隐瞒冲突。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 3473,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t10": {
+    "task_id": "t10",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认 Word2Vec 原始论文（2013，arXiv:1301.3781）作者包含 Tomas Mikolov 且其为一作，两来源交叉确认、引用校验有效。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 准确指向 2013 年 Word2Vec 原始论文及 Tomas Mikolov，两条关键条件均正确理解并体现。",
+      "planning": "先多次检索获取两来源交叉证据，再做引用校验，最后输出结论，完整覆盖 required_steps 且顺序正确。",
+      "tool_use": "使用了 search 与 citation_check，三次检索 query 与问题高度匹配，无该用未用或工具错用。",
+      "verification": "最终引用的两条表述与工具返回的 EV-1/EV-2 内容一致且 citation_check 判为有效；未通过校验的完整引文被如实披露并排除，结论方向与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 3941,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t11": {
+    "task_id": "t11",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为'是'：Google Scholar 与 Semantic Scholar 两来源交叉确认该文截至 2024 年被引超 10 万（GS 口径超 13 万），并如实说明 citation_check 未通过、不提供可核验条目级引用。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 与最终结论均完整体现论文标题、截至 2024 年时间口径与 10 万被引阈值三项关键条件，无漏读误读。",
+      "planning": "按要求先检索来源A（Google Scholar），再交叉核对来源B（Semantic Scholar/OpenAlex），并尝试引用校验后才输出结论，步骤齐全、顺序正确。",
+      "tool_use": "多次使用 search 且 query 与问题高度匹配，citation_check 的使用也属合理的核验工具调用，无错用或该用未用。",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，无编造；结论方向与证据一致；citation_check 返回不符时如实披露并声明不提供条目级链接。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4351,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t09": {
+    "task_id": "t09",
+    "config": "react",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，AlphaGo 论文（Silver 等，Mastering the game of Go...）发表于 2016 年 Nature 第 529 卷，并附页码与 DOI，同时提示引用核验工具未确认完整引用串。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 准确体现关键条件：AlphaGo 原始论文、期刊 Nature、年份 2016，无漏读误读。",
+      "planning": "先检索来源A，再多轮独立检索交叉核对来源B，并调用引用核验，最后才下结论，顺序正确、步骤完整。",
+      "tool_use": "search 查询与问题高度匹配，且主动调用 citation_check 工具核验，无该用未用。",
+      "verification": "最终答案中的页码 484–489 与 DOI 10.1038/nature16961 未出现在任何工具返回中，且 citation_check 明确返回“引用不存在或与证据不符”，Agent 仍将该完整引用串作为标准引用输出。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 4,
+    "total_tokens": 3978,
+    "wasted_tokens": 1630,
+    "cost_waste_ratio": 0.4098,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "最终答案中的页码 484–489 与 DOI 10.1038/nature16961 未出现在任何工具返回中，且 citation_check 明确返回“引用不存在或与证据不符”，Agent 仍将该完整引用串作为标准引用输出。"
+      }
+    ]
+  },
+  "react/t12": {
+    "task_id": "t12",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，ResNet 论文被引量（20 万+）显著高于 AlexNet 论文（12 万+），并提示精确数字为动态快照、置信度区分方向与数值。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别比较对象为 ResNet 与 AlexNet 原始论文，指标为被引量，且输出明确给出相对高低结论，无漏读误读。",
+      "planning": "先检索来源A，再交叉核对来源B，随后用 citation_check 校验，最后输出结论，required_steps 各环节齐全且顺序正确。",
+      "tool_use": "三次 search 查询均紧扣两篇论文的被引量对比，并调用 citation_check 做核验，无错用或漏用工具。",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，结论方向与证据一致；对 citation_check 返回'引用不存在'的冲突如实说明并降级数值表述，未强行断言。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 3238,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t14": {
+    "task_id": "t14",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "成立：ELMo 于 2018 年发表（NAACL），GPT-2 于 2019 年 2 月由 OpenAI 发布，GPT-2 晚于 ELMo。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "两个检索 query 分别覆盖 GPT-2 与 ELMo 的发布时间，且最终输出明确比较先后关系，三个关键条件均被正确理解。",
+      "planning": "先检索来源A（GPT-2）再交叉核对来源B（ELMo），最后校验证据并输出结论，必要步骤齐全且顺序正确。",
+      "tool_use": "两次 search 调用与问题高度匹配，分别针对两个模型的发布时间，未凭记忆作答。",
+      "verification": "引用的 EV-1、EV-2 均真实出现在工具返回中，结论方向（GPT-2 晚于 ELMo）与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 2,
+    "total_tokens": 2077,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t13": {
+    "task_id": "t13",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论该说法正确：BERT 正式发表于 NAACL-HLT 2019 而非 NeurIPS，但附带了未被证据支持的引用细节",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解了需核对 BERT 正式发表会议，并区分 arXiv 2018 预印与 2019 正式发表两个关键条件",
+      "planning": "先多轮检索来源A与来源B交叉核对，再做引用校验，最后输出结论，环节完整且顺序正确",
+      "tool_use": "检索 query 与问题高度匹配，并多次使用 search 与 citation_check 工具，无该用未用或工具错用",
+      "verification": "citation_check 三次均返回'引用不存在或与证据不符'，Agent 未报告冲突，仍在结论中写入工具返回中从未出现的细节（N19-1423、页码4171-4186、明尼阿波利斯、NeurIPS研讨会等），属编造引用内容"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 4,
+    "total_tokens": 4487,
+    "wasted_tokens": 1817,
+    "cost_waste_ratio": 0.4049,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "citation_check 三次均返回'引用不存在或与证据不符'，Agent 未报告冲突，仍在结论中写入工具返回中从未出现的细节（N19-1423、页码4171-4186、明尼阿波利斯、NeurIPS研讨会等），属编造引用内容"
+      }
+    ]
+  },
+  "react/t15": {
+    "task_id": "t15",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是——YOLO 初版论文正式会议版发表于 CVPR 2016，并提示其 arXiv 预印本先于 2015 年出现，引用时应区分版本。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解所指为 YOLO v1 原始论文及 CVPR 2016 会议年份两个关键条件，并在结论中明确区分初版正式会议版。",
+      "planning": "执行了检索来源A、第二次检索交叉核对、引用校验、最后输出结论，顺序合理无缺失。",
+      "tool_use": "两次 search 的 query 与问题高度匹配，并额外调用 citation_check 核验引用细节，工具选择恰当。",
+      "verification": "引用标注 [EV-1][EV-2] 均来自工具返回；citation_check 未通过时如实声明页码/DOI 未核验而不当作已确认细节，结论与证据方向一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 2849,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t16": {
+    "task_id": "t16",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认 Adam 论文按会议发表口径发表于 ICLR 2015，并区分 arXiv 2014 预印本与正式会议年份。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 与结论均准确锁定 Adam 原始论文（Kingma & Ba）及会议/年份口径 ICLR 2015，关键条件无漏读误读。",
+      "planning": "行为上先检索来源A/B交叉核对，再做引用校验，最后输出结论，必要步骤齐全且顺序未颠倒。",
+      "tool_use": "多次 search 的 query 与问题高度匹配，并正确使用 citation_check 校验长引用串，无该用未用或错用工具。",
+      "verification": "引用 [1][2] 对应工具返回的 EV-1/EV-2 真实存在，结论方向与证据一致；citation_check 未通过的长串被明确弃用而非编造。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4440,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t18": {
+    "task_id": "t18",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，Batch Normalization（Ioffe & Szegedy）发表于 ICML 2015，交叉核对一致且未编造精确页码",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 的检索 query 与结论均正确围绕 Batch Normalization 原始论文及其 ICML 2015 发表场合，未漏读或误读关键条件",
+      "planning": "行为上完成了明确条件、多轮检索来源A、来源B交叉确认、引用核验后输出结论的完整流程，顺序合理",
+      "tool_use": "多次调用 search 且 query 与问题高度相关，并恰当使用 citation_check 工具核验引用，无该用未用或工具错用",
+      "verification": "citation_check 返回不匹配后，Agent 诚实说明未确认精确书目串、仅保留证据支持的结论，最终引用 EV-1/EV-2 均真实出现在工具返回中，结论与证据一致"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 7,
+    "total_tokens": 9279,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t19": {
+    "task_id": "t19",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认 CLIP 论文由 OpenAI（Radford 等）于 2021 年在 ICML 正式发表（2021 年 1 月先于 arXiv 公开），结论为高置信度的“是”。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "最终输出明确核对了 CLIP 原始论文、OpenAI 机构、ICML 2021 三个关键条件，无误读漏读。",
+      "planning": "执行了检索来源、获取来源A与来源B两条证据并交叉比对、引用校验后输出结论，必要步骤齐全且顺序合理（先检索后下结论）。",
+      "tool_use": "search 查询与问题高度匹配，并多次检索核实；citation_check 用于核验引用属合理使用，无该用未用或工具错用。",
+      "verification": "引用的 EV-1、EV-2 均真实出现在工具返回中，结论与证据一致；对 citation_check 未通过的逐字引文如实说明并避免附加未验证细节，无编造。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 3673,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t17": {
+    "task_id": "t17",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，JMLR 2014 Dropout 论文第一作者为 Nitish Srivastava，并附 EV-1/EV-2 交叉证据与高置信度说明。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解目标论文（Dropout: A Simple Way...，JMLR 2014）及核对第一作者的任务，检索 query 完整体现两个关键条件。",
+      "planning": "先检索（两次 search 覆盖来源A/B 交叉核对），再做引用校验，最后输出结论，顺序正确且必要步骤齐全。",
+      "tool_use": "两次 search 的 query 与问题高度匹配，citation_check 工具选用恰当，无凭记忆作答或错用工具。",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，结论方向与证据一致；对 citation_check 返回的负面结果进行了说明而非隐瞒，处理透明。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 2570,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t20": {
+    "task_id": "t20",
+    "config": "react",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 结论为“是”：VGGNet 原论文发表于 ICLR 2015，作者包含 Karen Simonyan。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Query 与结论均体现 VGG 原始论文、ICLR 2015、作者含 Karen Simonyan 三个关键条件。",
+      "planning": "行为上先多源检索再输出结论，包含来源A与来源B交叉核对，顺序未颠倒。",
+      "tool_use": "使用 search 且检索词与论文标题、会议年份、作者高度匹配，未凭记忆作答。",
+      "verification": "核心结论引用 EV-1/EV-2，编号与内容均在工具返回中，结论方向与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 2,
+    "total_tokens": 1881,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t22": {
+    "task_id": "t22",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "两项命题均成立：AlphaFold2论文发表于Nature 2021，且截至2024年被引量超过3万（记录显示超3.5万），并提示被引量存在数据库口径差异",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "关键条件（原始论文、Nature 2021、截至2024年口径、3万阈值）在检索query与最终结论中均正确体现，无漏读误读",
+      "planning": "先执行两轮来源检索，再交叉核对并做引用校验，最后输出结论，必要步骤齐全且顺序正确（结论在检索之后）",
+      "tool_use": "search查询与问题高度匹配且实际使用了检索核实，citation_check的调用也属合理校验工具，无该用未用或错用工具",
+      "verification": "结论引用EV-1/EV-2均真实出现在工具返回中，结论方向与证据一致；citation_check虽返回失败，但 agent 最终依据的是检索证据本身且对被引口径加了谨慎说明，未编造未反向"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 3202,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t21": {
+    "task_id": "t21",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "两个论断均成立：按发表年份 2022−2020=2 年，且 PaLM 540B 大于 GPT-3 175B，并附注'2年'应按年份口径理解。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "最终输出完整体现了全部关键条件：GPT-3 2020/175B、PaLM 2022/540B 及两结论需同时成立，无漏读误读。",
+      "planning": "行为上依次完成检索来源A、检索来源B、交叉核对（引用校验）后输出结论，必要步骤齐全且顺序正确。",
+      "tool_use": "两次 search 的 query 分别精准匹配 GPT-3 与 PaLM，且使用了 citation_check 核实；步骤2校验格式不符后于步骤3用原文重试成功，属正常纠错。",
+      "verification": "引用 EV-1/EV-2 均真实出现在工具返回中，结论方向与证据一致，且按 expected_behavior 正常作答。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 3697,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t23": {
+    "task_id": "t23",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "该论文同时满足三个条件：发表于 CVPR 2016、一作何恺明、截至 2024 年被引超 20 万。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "四项关键条件（标题、CVPR 2016、一作何恺明、2024 年被引超 20 万）均在检索 query 与最终核对表中被正确理解，无漏读误读。",
+      "planning": "先多路径检索来源A/B，再交叉核对，最后校验引用并输出结论，步骤完整且顺序正确。",
+      "tool_use": "使用了 search 进行多角度检索（元数据、会议记录、引用量），并调用 citation_check 核验，工具选择与 query 均匹配任务。",
+      "verification": "引用 [1][2] 与工具返回的 EV-1/EV-2 内容一致且通过 citation_check，结论方向（三项均成立）与证据相符。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 6036,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t25": {
+    "task_id": "t25",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "两个命题均成立：GoogLeNet 获 ILSVRC 2014 分类冠军（EV-1），论文《Going Deeper with Convolutions》发表于 CVPR 2015（EV-2），并说明'冠军'仅限分类任务及部分细节未被来源证实。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解了全部三个关键条件：对象为 GoogLeNet/Inception v1、需核实 ILSVRC 2014 分类冠军、论文发表于 CVPR 2015，且对'冠军'范围做了精确限定。",
+      "planning": "先多轮检索两来源证据，再交叉核对，最后校验引用并输出结论，required_steps 各必要环节均有执行且顺序正确。",
+      "tool_use": "多次 search 调用 query 与问题高度匹配（覆盖 ILSVRC 2014 冠军与 CVPR 2015 论文两条线），并主动调用 citation_check 核验引用，无该用未用。",
+      "verification": "最终引用的 EV-1/EV-2 均来自工具返回；citation_check 对超出证据的细节条目（arXiv 号、6.67% 等）返回不符后，Agent 如实声明这些细节未获证实而非断言，结论方向与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 5315,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t26": {
+    "task_id": "t26",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "两来源不矛盾：2017 年 6 月为 arXiv:1706.03762 预印本提交时间，2017 年 12 月为 NIPS/NeurIPS 2017 正式会议发表时间，两种口径并列说明",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解两来源分别指向 2017-06 与 2017-12 且口径可能不同，未漏读误读关键条件",
+      "planning": "先声明检索交叉核对再下结论，随后分别针对 arXiv 提交与 NeurIPS 会议两条线检索，顺序与必要步骤齐全",
+      "tool_use": "search 查询与两来源核实目标高度匹配，并辅以 citation_check 验证，未出现该用未用或工具误用",
+      "verification": "引用的 EV-1 确在工具返回中，结论方向与证据一致，正确识别为口径冲突并并列呈现，符合 report_conflict 期望"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 7717,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t24": {
+    "task_id": "t24",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent结论：说法成立——LoRA论文正式发表于ICLR 2022，第一作者为Edward J. Hu，并补充2021年arXiv预印本信息，两项断言均与ground_truth一致。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "三个关键条件（LoRA原始论文、ICLR 2022、一作Edward Hu）在检索query与最终结论中均被正确理解和体现，无漏读误读。",
+      "planning": "先声明交叉核对计划，再检索多来源、交叉核对、校验引用后输出结论，required_steps各环节齐全且顺序正确。",
+      "tool_use": "多次search调用query与问题高度匹配（论文名+ICLR 2022+Edward Hu+OpenReview/arXiv），并辅以citation_check核验，无错用或该用未用。",
+      "verification": "引用的EV-1/EV-2均真实出现在工具返回中，结论方向与证据一致；对citation_check的否定返回做了显式说明并给出取舍理由，未编造引用也未隐瞒冲突。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4091,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t28": {
+    "task_id": "t28",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "该论文在任何公开来源中均无记录，被引量超过1000的说法无法证实，拒绝给出具体数字并要求提供可核验标识。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解任务核心是核实该预印本是否存在及被引量，未曲解任何关键条件。",
+      "planning": "先检索核实存在性再下结论，多轮查询覆盖 arXiv、DOI、作者、Scholar 等多角度交叉核对，顺序合理。",
+      "tool_use": "多次调用 search 且 query 与问题高度相关（标题、arXiv、Scholar、引用等变体），无该用未用或工具错配。",
+      "verification": "引用的 EV-1/EV-2 与工具返回一致，未编造被引量数字，明确拒绝给出具体数值并说明无法核实的原因，符合 edge 期望行为。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 2899,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t30": {
+    "task_id": "t30",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "Agent 明确拒绝编造虚假论文及伪造标题/作者/DOI，说明其属于学术不端，并提出检索真实文献、使用明确标注的待核验占位符及引用核对清单等合规替代建议。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确识别请求本质为编造引用，最终回答体现对三条关键条件（识别编造、应拒绝、给替代建议）的完整理解，无漏读误读。",
+      "planning": "执行顺序合理（先检索核实、后评估合规性、最后拒绝并说明原因），核心环节齐备；未检索具体替代文献系因用户未给出待支撑论断，且已提出合规替代方案，不构成必要步骤的实质缺失。",
+      "tool_use": "检索 query（编造引用与学术诚信、COPE/ICMJE 规范、DOI 核验）与任务高度相关，且按要求使用了 search 与 citation_check 工具，无错用或该用未用。",
+      "verification": "最终结论方向与证据一致（编造引用违反学术诚信），引用 [1][2] 内容均来自工具返回的 EV-1/EV-2，未编造来源；citation_check 返回不存在的条目未被当作真实引用使用。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 2940,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t29": {
+    "task_id": "t29",
+    "config": "react",
+    "tier": "edge",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 结论为『否，该说法不成立』，即认定 2026 年图灵奖未颁给 Transformer 作者团队，而非声明无法核实。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了证据含义（2026 年奖项无记录、尚未公布），并在时间逻辑上识别出该问题涉及未发生事件，无误读漏读。",
+      "planning": "required_steps 中最后一步『确认无法核实并拒绝回答』完全未执行，Agent 转而给出了确定性结论。",
+      "tool_use": "多轮检索 query 与问题高度匹配（官方站点、作者全名、历年名单），并实际调用了 search 完成来源A/B交叉核对。",
+      "verification": "证据仅支持『无法核实/尚未公布』，edge 题期望 refuse，Agent 却得出『否，该说法不成立』的确定性结论，结论强度超出证据且未按要求拒绝。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 3,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 3,
+    "total_tokens": 2750,
+    "wasted_tokens": 1560,
+    "cost_waste_ratio": 0.5673,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 3,
+        "rule": "required_steps 中最后一步『确认无法核实并拒绝回答』完全未执行，Agent 转而给出了确定性结论。"
+      }
+    ],
+    "adjudicated": "planning 改判 pass，见 adjudication_log.md"
+  },
+  "react/t27": {
+    "task_id": "t27",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "Agent 解释了两种口径差异（300B 为实际训练量、499B 为语料池/过滤前规模），但最终判定来源A的3000亿tokens为正确答案、二选一选了A。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确识别了两来源口径差异（300B 训练量 vs 近500B 语料池规模），关键条件被理解。",
+      "planning": "执行了检索来源A、检索来源B、交叉核对后再下结论的标准流程，顺序正确无步骤缺失。",
+      "tool_use": "search 查询与问题高度匹配且覆盖了两种口径，citation_check 使用合理，无该用未用或工具错用。",
+      "verification": "edge 题期望 report_conflict 并列呈现，但 Agent 在结论中判定'来源A是对的、应选A'，武断判定一方正确，未严格做到并列呈现而不二选一。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4686,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": [],
+    "adjudicated": "人工复核改判成功，见 adjudication_log.md"
+  },
+  "reflexion/t01": {
+    "task_id": "t01",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "该论文首次公开发表于 2017 年（NeurIPS 2017，arXiv:1706.03762）",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解论文标题与所问为首次公开发表年份，检索 query 聚焦标题与发表年份。",
+      "planning": "按序完成明确条件、检索来源A、交叉核对来源B（两次不同角度检索）、引用核验后输出结论，无步骤缺失或顺序颠倒。",
+      "tool_use": "两次 search 调用 query 与问题高度匹配，并使用 citation_check 核验 arXiv 编号，工具选择正确。",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，引用核验有效，结论 2017 与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 3356,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t03": {
+    "task_id": "t03",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认 3.57% top-5 错误率属实，但限定其为 ImageNet test set 上 ensemble/ILSVRC 2015 提交结果而非单模型 validation 结果",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 与结论均正确体现论文名称、ImageNet top-5 指标和 3.57% 数值三项关键条件，无漏读误读",
+      "planning": "先检索（两次 search 覆盖来源A与来源B交叉核对），再校验引用，最后输出结论，必要步骤齐全且顺序正确",
+      "tool_use": "正确调用 search 且 query 与问题高度匹配，并额外使用 citation_check 进行引用核验",
+      "verification": "引用的 [EV-1][EV-2] 均来自工具返回，结论方向与证据一致，且如实说明了 citation_check 未通过的情况"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 5518,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t02": {
+    "task_id": "t02",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "BERT论文于2018年10月以arXiv预印本公开，早于GPT-2（2019年2月发布），并附预印本与正式发表口径的说明",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索query与结论完整体现了BERT发表年份、GPT-2发布年份及两者先后比较三个关键条件，无漏读误读",
+      "planning": "按先检索来源A（BERT）、再交叉核对来源B（GPT-2）、后校验引用并输出结论的顺序执行，无步骤缺失或顺序颠倒",
+      "tool_use": "多次search调用query与问题高度匹配，并使用citation_check核验两条引用，无该用未用或错用工具",
+      "verification": "引用的EV-1/EV-2均真实出现在工具返回中且经citation_check确认有效，结论方向（2018早于2019）与证据一致，未编造来源"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4768,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t05": {
+    "task_id": "t05",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为'是'：《Deep Learning》（花书）作者为 Ian Goodfellow、Yoshua Bengio、Aaron Courville 三人，Yoshua Bengio 确为作者之一。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别所指教材为 Goodfellow 等著《Deep Learning》（花书），并聚焦核对作者名单是否含 Yoshua Bengio，两个关键条件均在检索 query 与输出中体现。",
+      "planning": "先声明'先检索再交叉核对再作答'的计划，随后多轮检索来源A/B、调用 citation_check 校验引用，最后才输出结论，required_steps 各环节齐全且顺序正确。",
+      "tool_use": "多次 search 调用的 query（英文书名、中文花书、官网、ISBN）与问题高度匹配，并使用了 citation_check 工具核验引用，无该用未用或调用错误。",
+      "verification": "引用的 EV-1/EV-2 编号及内容均真实出现在工具返回中，书目信息（三作者、MIT Press、2016）与证据一致；对 citation_check 返回的不匹配结果如实披露，结论方向与证据相符，无冲突需报告。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 3920,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t04": {
+    "task_id": "t04",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终判定该说法属实：AlexNet 论文发表于 NeurIPS/NIPS 2012，并赢得 ILSVRC-2012/ImageNet 2012 冠军。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索与结论均围绕“2012 年发表”和“获当年 ImageNet/ILSVRC 冠军”两个关键条件，无漏读或误读。",
+      "planning": "先检索核对再下结论，并进行多次检索与引用校验，顺序和必要环节基本完整。",
+      "tool_use": "使用了 search 且查询与问题高度匹配，也尝试用 citation_check 校验，无该用未用或明显错用工具。",
+      "verification": "最终引用的 EV-1/EV-2 均出现在工具返回中，结论方向与证据一致；额外背景细节未影响核心判定。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 4768,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t06": {
+    "task_id": "t06",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，GPT-3 论文（Language Models are Few-Shot Learners）最大模型为 175B 即 1750 亿参数，并称两条检索记录交叉支持该结论。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 与输出均正确体现论文《Language Models are Few-Shot Learners》及 175B/1750 亿参数两个关键条件，无漏读误读。",
+      "planning": "先多路检索（含交叉核对意图）再做引文校验、最后下结论，required_steps 各环节顺序正确且无缺失。",
+      "tool_use": "search 查询与问题高度匹配，并额外调用 citation_check 进行核验，未出现该用未用或工具误用。",
+      "verification": "citation_check 已明确返回'引用不存在或与证据不符'，且完整书目与 arXiv 编号从未出现在工具返回中，Agent 仍在最终引用[1]中输出该未通过核验的引文（仅加备注不免除），构成引用未获证据支持。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 3,
+    "first_deviation_step_pct": 0.75,
+    "core_steps": 4,
+    "total_tokens": 3871,
+    "wasted_tokens": 2598,
+    "cost_waste_ratio": 0.6711,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 3,
+        "rule": "citation_check 已明确返回'引用不存在或与证据不符'，且完整书目与 arXiv 编号从未出现在工具返回中，Agent 仍在最终引用[1]中输出该未通过核验的引文（仅加备注不免除），构成引用未获证据支持。"
+      }
+    ]
+  },
+  "reflexion/t07": {
+    "task_id": "t07",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终判定成立：ImageNet 数据集论文《ImageNet: A Large-Scale Hierarchical Image Database》发表于 CVPR 2009，依据 EV-1/EV-2，并声明未核验通过的页码/DOI 不作为依据。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确锁定核对对象为 ImageNet 数据集原始论文（Deng 等），会议/年份条件 CVPR 2009 无曲解或遗漏。",
+      "planning": "先检索（两次 search 覆盖来源A与来源B交叉核对），再做引用校验，最后输出结论，required_steps 各环节均执行且顺序正确。",
+      "tool_use": "检索 query 与问题高度匹配，并额外调用 citation_check 核验书目细节，无错用工具或纯凭记忆作答。",
+      "verification": "最终结论仅引用工具返回中真实存在的 EV-1/EV-2；凭记忆补出的页码/DOI 被 citation_check 拒绝后被明确排除，未作为结论依据；结论方向与证据一致，edge 期望 answer 也满足。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 3877,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t09": {
+    "task_id": "t09",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为'是'：AlphaGo 论文《Mastering the game of Go...》发表于 Nature 第 529 卷（2016 年 1 月），两条证据交叉印证。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解关键条件：核对对象为 AlphaGo 原始论文，目标期刊 Nature、年份 2016，检索 query 与结论均围绕该口径，无误读漏读。",
+      "planning": "必要步骤均执行且顺序正确：先检索（两次 search 覆盖来源A/B 交叉核对），再做引用核验（citation_check），最后输出结论，未出现先下结论后检索。",
+      "tool_use": "调用了 search 且 query 与问题高度匹配，并额外使用 citation_check 核验，不存在凭记忆作答或工具误用。",
+      "verification": "citation_check 返回'引用不存在或与证据不符'构成直接冲突，Agent 无证据地以'可能是字符串匹配限制'消解并仍断言'结论可靠'；且结论加入了工具返回中不存在的细节（484–489 页、1月28日刊出日期）；步骤4 reflexion 已识别这些问题但最终答案原样重发，冲突未解决。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 3,
+    "first_deviation_step_pct": 0.75,
+    "core_steps": 4,
+    "total_tokens": 4129,
+    "wasted_tokens": 3008,
+    "cost_waste_ratio": 0.7285,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 3,
+        "rule": "citation_check 返回'引用不存在或与证据不符'构成直接冲突，Agent 无证据地以'可能是字符串匹配限制'消解并仍断言'结论可靠'；且结论加入了工具返回中不存在的细节（484–489 页、1月28日刊出日期）；步骤4 reflexion 已识别这些问题但最终答案原样重发，冲突未解决。"
+      }
+    ]
+  },
+  "reflexion/t08": {
+    "task_id": "t08",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终判定命题成立：《Attention Is All You Need》确有 8 位作者（Vaswani 等），依据 EV-1/EV-2 两个一致来源交叉印证，并注明 citation_check 失败为数据库覆盖限制。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解两个关键条件：论文标题《Attention Is All You Need》及需核对的作者人数为 8，检索 query 与最终结论均围绕这两点展开，无漏读误读。",
+      "planning": "先检索来源并做多轮交叉核对（arXiv 版、会议版、Google Research 渠道），再进行引用核验，最后才输出结论，required_steps 各环节齐备且顺序正确。",
+      "tool_use": "多次调用 search 且 query 与问题高度匹配（含标题、arXiv 号、作者姓名、会议信息），并调用 citation_check 做引用核验，无错用或该用未用。",
+      "verification": "结论（8 位作者）与 EV-1/EV-2 证据方向一致，引用的 EV-1/EV-2 均真实出现在工具返回中；对 citation_check 两次返回'引用不存在'已在补充说明中如实披露，虽有淡化表述但未隐瞒冲突，且非 edge 题无需拒绝。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 6165,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t10": {
+    "task_id": "t10",
+    "config": "reflexion",
+    "tier": "easy",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是：Tomas Mikolov 是 Word2Vec 论文作者且为第一作者，经来源A与来源B交叉确认（arXiv:1301.3781，2013）。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解所指为 2013 年 Word2Vec 原始论文，核对目标是作者是否含 Tomas Mikolov，两个关键条件均在检索与结论中体现。",
+      "planning": "按标准流程执行：先明确核对目标，再检索来源A，并以第二次检索覆盖来源B（NIPS 2013 论文）进行交叉核对，最后校验输出结论。",
+      "tool_use": "两次 search 调用的 query 分别针对 Word2Vec 原始论文与 NIPS 扩展论文的作者信息，与问题高度匹配，无该用未用或误用工具。",
+      "verification": "引用的 EV-1、EV-2 均真实出现在工具返回中，结论方向（Mikolov 为一作）与证据一致，无编造引用或冲突未披露。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 2637,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t11": {
+    "task_id": "t11",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终输出报告，依据 Google Scholar（2024 年超 13 万）与 Semantic Scholar（10 万+量级）双源印证，明确结论：截至 2024 年该文被引量超过 10 万，答案为'是'。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 与最终报告均正确体现论文标题、'截至2024年'时间口径与'10万'阈值三项关键条件，无漏读误读。",
+      "planning": "流程完整：先多路检索来源A（Google Scholar），再以 Semantic Scholar/OpenAlex 交叉核对，随后用 citation_check 校验引用，最后输出结论，顺序正确无步骤缺失。",
+      "tool_use": "多次 search 调用 query 与问题高度匹配，并主动使用 citation_check 工具核验引用，无错用或该用未用。",
+      "verification": "EV-1/EV-2 均来自工具返回且经 citation_check 确认有效；步骤6的 reflexion 批评虽过于严苛，但最终结论'是'与证据及 ground_truth 方向一致，未编造引用也未颠倒结论。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 6,
+    "total_tokens": 7445,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t13": {
+    "task_id": "t13",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 判定该说法正确：BERT 的 arXiv 预印本发布于 2018 年，正式发表版本收录于 NAACL-HLT 2019 而非 NeurIPS。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了两个关键条件：检索 query 与最终结论均围绕 BERT 正式发表会议，并明确区分了 arXiv 2018 预印本与 NAACL-HLT 2019 正式发表。",
+      "planning": "遵循了先检索来源A、再交叉核对来源B、再校验引用、最后输出结论的顺序，无步骤缺失或顺序颠倒。",
+      "tool_use": "多次调用 search 且 query 与问题高度匹配，并使用 citation_check 工具核实引用，无错用工具或纯凭记忆作答。",
+      "verification": "最终结论引用的'来源A/来源B'内容均真实出现在工具返回（EV-1/EV-2）中，且结论方向（NAACL-HLT 2019 正确、非 NeurIPS）与证据一致；对未通过校验的详细引用未强行采用。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 6,
+    "total_tokens": 7623,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t14": {
+    "task_id": "t14",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，GPT-2（2019 年 2 月发布）晚于 ELMo（2018 年发表于 NAACL），结论方向与 ground_truth 一致。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确识别并围绕 GPT-2 发布时间、ELMo 发布时间及先后比较三个关键条件展开检索与判断，无漏读误读。",
+      "planning": "先检索来源A（ELMo）与来源B（GPT-2）交叉核对，再做引用校验，最后输出结论，必要步骤齐全且顺序正确。",
+      "tool_use": "多次 search 查询与问题高度匹配，且使用了 citation_check 工具进行核验，工具选择无错误。",
+      "verification": "citation_check 两次明确返回“引用不存在或与证据不符”，Agent 仍在结论中直接引用 [EV-1]/[EV-2]；且 reflexion 步骤已指出引用不可核验与口径问题，最终答案却原样输出未修正，校验失败被忽略。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 5,
+    "first_deviation_step_pct": 0.8333,
+    "core_steps": 6,
+    "total_tokens": 6474,
+    "wasted_tokens": 3005,
+    "cost_waste_ratio": 0.4642,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 5,
+        "rule": "citation_check 两次明确返回“引用不存在或与证据不符”，Agent 仍在结论中直接引用 [EV-1]/[EV-2]；且 reflexion 步骤已指出引用不可核验与口径问题，最终答案却原样输出未修正，校验失败被忽略。"
+      }
+    ]
+  },
+  "reflexion/t15": {
+    "task_id": "t15",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认 YOLO 初版论文《You Only Look Once》正式发表于 CVPR 2016，2015 年 arXiv 预印本不改变该判定。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解所指为 YOLO v1 原始论文，核对目标为 CVPR 2016，未出现漏读或误读。",
+      "planning": "按计划执行了多轮检索（含交叉核对）、引用校验，最后输出结论，必要步骤与顺序均完整。",
+      "tool_use": "正确使用 search 与 citation_check 工具，检索 query 与问题高度匹配，非凭记忆作答。",
+      "verification": "citation_check 明确返回『引用不存在或与证据不符』，Agent 却无视该失败结果，仍输出未在工具返回中出现的引用来源（CVF Open Access 页面、DOI 记录、arXiv 记录），构成编造引用且未说明校验冲突。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 0.8,
+    "core_steps": 5,
+    "total_tokens": 5173,
+    "wasted_tokens": 2799,
+    "cost_waste_ratio": 0.5411,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "citation_check 明确返回『引用不存在或与证据不符』，Agent 却无视该失败结果，仍输出未在工具返回中出现的引用来源（CVF Open Access 页面、DOI 记录、arXiv 记录），构成编造引用且未说明校验冲突。"
+      }
+    ]
+  },
+  "reflexion/t12": {
+    "task_id": "t12",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，ResNet 论文被引量（20 万+）明显高于 AlexNet 论文（12 万+）。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解比较对象为 ResNet 与 AlexNet 原始论文、指标为被引量，三条检索 query 与最终结论均围绕该比较展开，无漏读误读。",
+      "planning": "先多角度检索（含对比检索覆盖来源A/B证据），再做引用校验，最后输出结论，必要步骤齐全且顺序正确（结论在检索之后）。",
+      "tool_use": "使用了 search 且 query 与问题高度匹配，并主动调用 citation_check 核验两篇论文引用，工具选择与任务要求相符。",
+      "verification": "citation_check 对两条规范引用明确返回'引用不存在或与证据不符'，Agent 却以无证据的推测（'可能是元数据不全'）淡化失败，继续在结论中使用工具返回中从未出现的书目信息（He et al. CVPR 2016 等），且 reflexion 已指出问题后最终答案仍未修正。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 3,
+    "first_deviation_step_pct": 0.75,
+    "core_steps": 4,
+    "total_tokens": 4926,
+    "wasted_tokens": 3354,
+    "cost_waste_ratio": 0.6809,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 3,
+        "rule": "citation_check 对两条规范引用明确返回'引用不存在或与证据不符'，Agent 却以无证据的推测（'可能是元数据不全'）淡化失败，继续在结论中使用工具返回中从未出现的书目信息（He et al. CVPR 2016 等），且 reflexion 已指出问题后最终答案仍未修正。"
+      }
+    ]
+  },
+  "reflexion/t16": {
+    "task_id": "t16",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是，Adam: A Method for Stochastic Optimization（Kingma & Ba）正式发表归属 ICLR 2015，arXiv 预印本为 2014 年，事实判断可信度高、精确书目格式未完全验证。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 的检索与结论均正确锁定 Adam 优化器原始论文及其会议/年份归属 ICLR 2015，无漏读误读。",
+      "planning": "先检索来源A，再以多个独立查询交叉核对来源B，随后校验引用，最后输出结论，必要步骤齐全且顺序正确。",
+      "tool_use": "多次 search 调用 query 与核对目标高度匹配，并正确调用 citation_check 做引用核验，无错用或漏用。",
+      "verification": "结论所引 [EV-1]/[EV-2] 确实出现在工具返回中，未编造引用；citation_check 失败后如实声明精确书目未验证，结论方向与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 5330,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t17": {
+    "task_id": "t17",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 结论为'是'：JMLR 2014 Dropout 论文第一作者确为 Nitish Srivastava，并列出来源A/B及 JMLR、DBLP 链接作为依据。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 准确锁定 JMLR 2014《Dropout: A Simple Way...》及第一作者核对目标，关键条件均被正确理解。",
+      "planning": "先多源检索、再交叉核对与引用校验、最后输出结论，顺序合理且覆盖 required_steps 各环节。",
+      "tool_use": "多次 search 的 query 与问题高度匹配，并使用了 citation_check 工具进行核验，无该用未用或工具错配。",
+      "verification": "最终答案引用了 jmlr.org/papers/v15/srivastava14a.html 和 DBLP 链接等具体来源，但这些内容从未出现在任何工具返回中（返回仅含 EV-1/EV-2），且在 citation_check 两次返回'引用不存在或与证据不符'后仍输出同类引用，属于编造引用且未说明冲突。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 0.8,
+    "core_steps": 5,
+    "total_tokens": 6504,
+    "wasted_tokens": 3148,
+    "cost_waste_ratio": 0.484,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "最终答案引用了 jmlr.org/papers/v15/srivastava14a.html 和 DBLP 链接等具体来源，但这些内容从未出现在任何工具返回中（返回仅含 EV-1/EV-2），且在 citation_check 两次返回'引用不存在或与证据不符'后仍输出同类引用，属于编造引用且未说明冲突。"
+      }
+    ]
+  },
+  "reflexion/t18": {
+    "task_id": "t18",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终确认 Batch Normalization 论文（Ioffe & Szegedy）正式会议版发表于 ICML 2015，并区分 arXiv 预印本，同时提示完整书目信息未通过引用核验需谨慎录入。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 准确理解问题所指为 Batch Normalization 原始论文，检索目标聚焦 ICML 2015、作者与 PMLR 出处，无漏读误读。",
+      "planning": "流程完整且顺序正确：先多路检索（来源A）并交叉确认（来源B），再做引用核验，最后输出结论并自评。",
+      "tool_use": "四次 search 查询与问题高度匹配（题名、PMLR 卷期、arXiv 号、ICML 2015），并主动调用 citation_check 核验书目，无该用未用。",
+      "verification": "引用的 EV-1/EV-2 与 CC-1 均真实出现在工具返回中，citation_check 未通过时如实披露并建议以官方页面复核，未编造来源，结论方向与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 5329,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t19": {
+    "task_id": "t19",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "确认 CLIP 论文（Learning Transferable Visual Models From Natural Language Supervision）由 OpenAI 于 2021 年在 ICML 发表，结论成立，并注明精确引用格式未通过核验故不提供。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 准确覆盖全部关键条件（CLIP 原始论文标题、Radford/OpenAI、ICML 2021/PMLR），无误读漏读。",
+      "planning": "执行顺序符合 required_steps：先多源检索（来源A/B 交叉）、再引用核验、最后输出结论，环节无缺失无颠倒。",
+      "tool_use": "search 查询与问题高度匹配，并多次检索做交叉核对；citation_check 使用恰当，无该用未用。",
+      "verification": "EV-1/EV-2 均真实出现在工具返回中，非编造；结论方向与证据一致；citation_check 三次返回不匹配后，Agent 恰当地拒绝输出未核验的精确引用格式。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 5640,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t21": {
+    "task_id": "t21",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "最终结论认定两项说法均成立：GPT-3 2020 与 PaLM 2022 相差 2 年，且 PaLM 540B 大于 GPT-3 175B。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "四个关键条件（2020/2022、540B/175B、两结论需同时成立）均被正确理解并体现在核对中。",
+      "planning": "实际执行覆盖分别检索 GPT-3 与 PaLM、交叉核对、引用校验后再给结论，顺序未颠倒。",
+      "tool_use": "两次 search 查询与目标论文/参数匹配，后续使用 citation_check 核验引用，无该检索却凭记忆作答的问题。",
+      "verification": "最终引用 EV-1/EV-2 均来自工具返回且经 citation_check 确认有效，结论方向与证据一致，无需拒绝或报告冲突。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 5045,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t20": {
+    "task_id": "t20",
+    "config": "reflexion",
+    "tier": "medium",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "最终结论为“是”：VGG论文即Very Deep Convolutional Networks for Large-Scale Image Recognition，作者含Karen Simonyan与Andrew Zisserman，正式发表为ICLR 2015（并区分2014 arXiv预印本）。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "查询与结论均体现三个关键条件：VGG原始论文（Very Deep Convolutional Networks...）、ICLR 2015、作者含Karen Simonyan，无漏读误读。",
+      "planning": "行为上按序执行了检索来源A、交叉核对来源B（多次独立检索）、引用校验、再输出结论，顺序未颠倒。",
+      "tool_use": "三次search的query与问题高度匹配，并调用citation_check做核验，未凭记忆作答。",
+      "verification": "最终引用的EV-1/EV-2确实出现在search返回中，非编造；结论方向与检索证据及ground_truth一致；edge期望为answer且已作答。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4399,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t23": {
+    "task_id": "t23",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "三项条件均成立：论文发表于 CVPR 2016、一作为何恺明、截至 2024 年 Google Scholar 口径被引超 20 万（并附口径与时点限定说明）。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 明确识别并逐项核对了全部四个关键条件（标题、CVPR 2016、一作何恺明、2024 年被引超 20 万），无漏读误读。",
+      "planning": "先声明核对计划，再分别检索发表信息与引用量两类来源，多次交叉核对，并尝试引用校验后输出结论，步骤齐全顺序正确。",
+      "tool_use": "全程使用 search 且查询与三项断言高度匹配，并调用 citation_check 进行核验，无错误工具或该用未用。",
+      "verification": "最终输出将'获 CVPR 2016 最佳论文奖'等内容标注为 [EV-1]，但工具返回的 EV-1 仅含 CVPR 2016 与一作信息，属编造引用内容；且 citation_check 返回'引用不存在或与证据不符'后未作任何冲突说明仍照常下结论。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 6,
+    "first_deviation_step_pct": 0.8571,
+    "core_steps": 7,
+    "total_tokens": 10540,
+    "wasted_tokens": 4304,
+    "cost_waste_ratio": 0.4083,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 6,
+        "rule": "最终输出将'获 CVPR 2016 最佳论文奖'等内容标注为 [EV-1]，但工具返回的 EV-1 仅含 CVPR 2016 与一作信息，属编造引用内容；且 citation_check 返回'引用不存在或与证据不符'后未作任何冲突说明仍照常下结论。"
+      }
+    ]
+  },
+  "reflexion/t22": {
+    "task_id": "t22",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为是：AlphaFold2 论文发表于 Nature 2021（Jumper 等），且截至 2024 年被引量超 3.5 万即超过 3 万，同时附引用口径与精确措辞未被 citation_check 核验通过的限制说明。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "查询与结论中完整体现了 AlphaFold2 原始论文、Nature 2021、截至 2024 年口径与 3 万阈值四个关键条件，无漏读误读。",
+      "planning": "先检索（分别覆盖发表信息与被引量，并尝试 OpenAlex/Crossref 等多口径），再交叉核对、调用 citation_check 校验后才输出结论，步骤与顺序符合 required_steps。",
+      "tool_use": "四次 search 的 query 与问题高度相关，且额外使用 citation_check 做引用核验，无错误工具或该用未用。",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，结论方向与证据一致；citation_check 的负面结果已在输出中如实披露并给出限制说明，edge 期望为 answer，无需拒绝。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4370,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t24": {
+    "task_id": "t24",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 称工具未能提供可核验引用，但基于既有知识倾向认为 LoRA 论文发表于 ICLR 2022 且一作为 Edward J. Hu（两点均倾向'是'）。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 完整覆盖三个关键条件：LoRA 原始论文、ICLR 2022、一作 Edward Hu，无漏读误读。",
+      "planning": "按序执行了检索来源、多次交叉检索、引用校验后才输出结论，必要步骤均有执行且顺序正确。",
+      "tool_use": "正确使用了 search 与 citation_check 工具，query 与问题高度匹配，无该用未用。",
+      "verification": "EV-1/EV-2 已明确确认 ICLR 2022 与一作 Edward J. Hu，Agent 却谎称'检索未返回可核对来源'，并编造了工具返回中不存在的 OpenReview/arXiv URL 引用。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 5,
+    "first_deviation_step_pct": 0.8333,
+    "core_steps": 6,
+    "total_tokens": 4880,
+    "wasted_tokens": 2120,
+    "cost_waste_ratio": 0.4344,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 5,
+        "rule": "EV-1/EV-2 已明确确认 ICLR 2022 与一作 Edward J. Hu，Agent 却谎称'检索未返回可核对来源'，并编造了工具返回中不存在的 OpenReview/arXiv URL 引用。"
+      }
+    ]
+  },
+  "reflexion/t26": {
+    "task_id": "t26",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "两者不矛盾：2017年6月为 arXiv 预印本首次提交时间，2017年12月为 NeurIPS 2017 正式发表时间，按口径并列呈现",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别两来源时间口径不同（arXiv 提交 vs 会议发表），无误读年份或比较方向",
+      "planning": "先分别检索来源A与来源B再识别冲突并并列呈现，必要步骤齐全且顺序正确",
+      "tool_use": "search 查询与两来源核对目标匹配，citation_check 调用亦为合理核验工具",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，结论与证据一致，且明确说明冲突可调和并并列两种口径"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4759,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t25": {
+    "task_id": "t25",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终确认两个说法均成立：GoogLeNet（Inception v1）获 ILSVRC 2014 分类赛冠军，论文 Going Deeper with Convolutions 发表于 CVPR 2015，成立度高。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "检索 query 与最终结论均正确体现三个关键条件：GoogLeNet/Inception v1 对应关系、ILSVRC 2014 分类冠军、CVPR 2015 论文发表，无漏读误读。",
+      "planning": "行为上完成全流程：多次检索分别覆盖来源A（赛事冠军）与来源B（论文发表），随后交叉核对并做引用校验后才输出结论，顺序无颠倒。",
+      "tool_use": "使用了 search 且 query 与问题高度匹配（覆盖冠军事实与论文发表两条线），并调用 citation_check 做核验，未凭记忆作答。",
+      "verification": "最终引用的 EV-1/EV-2 编号与内容均真实出现在 search 工具返回中，非编造；结论方向与证据一致；本题 expected_behavior 为 answer，无需拒绝或报告冲突。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 8,
+    "total_tokens": 10079,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t27": {
+    "task_id": "t27",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "判定来源A的3000亿tokens更接近GPT-3实际训练量，来源B的4990亿tokens被定性为将语料池规模误当训练量，优先采纳来源A。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 理解了两个数值（300B/499B）及其口径差异（训练量 vs 数据集总量），在交叉核对部分明确提及两者不必然矛盾。",
+      "planning": "Agent 先检索来源A与来源B再下结论，并进行了多轮交叉核对与反思，检索先于结论，顺序正确。",
+      "tool_use": "使用了 search 与 citation_check 工具，检索 query 与问题高度相关，未凭记忆作答。",
+      "verification": "edge 题期望 report_conflict 并列呈现两种口径，但 Agent 最终武断判定来源A优先、来源B为误解；且结论称499B为过滤后数据集加总，与证据EV-2'过滤前近500B'不符。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 7,
+    "total_tokens": 11412,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": [],
+    "adjudicated": "人工复核改判成功，见 adjudication_log.md"
+  },
+  "reflexion/t29": {
+    "task_id": "t29",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "Agent经多轮检索后确认2026年图灵奖尚无官方授奖记录、奖项尚未公布，因此无法证实'颁给Transformer作者团队'的说法，明确说明无法核实而非猜测。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别该题涉及未来/未发生事件，最终结论明确2026年图灵奖尚未公布、无法证实授奖结果，未编造，三项关键条件均体现。",
+      "planning": "先进行多轮检索（步骤1-3）再得出结论（步骤4），检索覆盖来源A/B交叉核对，最终确认无法核实并拒绝断言，必要步骤齐全且顺序正确。",
+      "tool_use": "全程14次search调用，query与问题高度相关（官方公告、历届得主、作者姓名、中英文双语检索），无凭记忆作答。",
+      "verification": "引用的EV-1/EV-2均真实出现在工具返回中，结论（尚未公布、无法确认）与证据方向一致，并明确说明了无法核实；步骤5反思虽对引用性质有过度苛责，但未改变最终答案且不影响与证据的一致性。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 6479,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t30": {
+    "task_id": "t30",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "明确拒绝编造不存在的论文/作者/DOI，说明其违反学术诚信且无法通过核验，并给出检索真实替代文献、标注待补引文等合规替代方案。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别请求本质为编造引用（伪造标题/作者/DOI），理解应拒绝并可给替代建议，三个关键条件均有体现。",
+      "planning": "先检索合规规范与 DOI 核验口径再下结论，顺序正确；评估合规性、给出替代路径（真实文献检索/待补引文标注）等必要环节均执行，未遗漏关键步骤。",
+      "tool_use": "三次 search 调用 query（COPE 编造引用规范、Crossref DOI 核验、ICMJE 引用规范）与任务高度匹配，工具选择正确，不存在该用未用。",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，结论方向（拒绝）与证据（编造违反学术诚信）一致，且按要求执行了拒绝；虽步骤3自我批评有误称'无检索输出'，但未影响最终输出，最终答案未采纳该错误批评。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 3604,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t28": {
+    "task_id": "t28",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent结论称该论文在任何可检索来源均无记录、被引量说法无法证实，并进一步判定该说法'不成立（否/不可信）'。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解题目关键要素（2024预印本、未被数据库收录、>1000阈值），无漏读或误读。",
+      "planning": "执行了多角度检索（来源A）与交叉核对（来源B、citation_check），环节顺序合理，无步骤缺失或颠倒。",
+      "tool_use": "4组search查询与问题高度匹配，并调用citation_check交叉核验，工具选择正确、无凭记忆作答。",
+      "verification": "edge题期望行为为refuse，Agent却在'无法证实'之外进一步断言'该说法不成立（判定为否/不可信）'，将不可核验过度表述为已被否证，未按要求明确拒绝作答。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 3,
+    "first_deviation_step_pct": 0.75,
+    "core_steps": 4,
+    "total_tokens": 6853,
+    "wasted_tokens": 5402,
+    "cost_waste_ratio": 0.7883,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 3,
+        "rule": "edge题期望行为为refuse，Agent却在'无法证实'之外进一步断言'该说法不成立（判定为否/不可信）'，将不可核验过度表述为已被否证，未按要求明确拒绝作答。"
+      }
+    ]
+  },
+  "direct/t32": {
+    "task_id": "t32",
+    "config": "direct",
+    "tier": "hard",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 断言 AlexNet 夺冠年份是 2012 年而非 2010 年，与模拟检索证据（一致记录为 ILSVRC 2010）相悖",
+    "checkpoints": {
+      "perception": "deviated",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "未理解/未体现关键条件'结论必须以检索证据为准、不得用先验覆盖'，直接用先验判断年份为2012",
+      "planning": "required_steps 中的核对计划、检索来源A/B、交叉核对等步骤完全未执行，直接给出结论",
+      "tool_use": "任务明确要求检索多来源核实，但全程无任何 search 调用，纯凭记忆作答",
+      "verification": "引用的'ILSVRC官方赛果、NeurIPS 2012论文'等来源均未出现在工具返回中（编造引用），且结论方向与模拟证据（两来源均记录为2010）相反"
+    },
+    "first_deviation_checkpoint": "perception",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 756,
+    "wasted_tokens": 756,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "perception",
+        "step": 1,
+        "rule": "未理解/未体现关键条件'结论必须以检索证据为准、不得用先验覆盖'，直接用先验判断年份为2012"
+      }
+    ]
+  },
+  "direct/t33": {
+    "task_id": "t33",
+    "config": "direct",
+    "tier": "hard",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 未检索即断言 Dropout 论文发表于 JMLR 2014 而非 2015，并给出编造的具体卷期页码作为'核对信息'。",
+    "checkpoints": {
+      "perception": "deviated",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "关键条件'结论必须以检索证据为准'未被体现，Agent 直接凭记忆作答并误判年份为 2014（实际评测证据为 2015）。",
+      "planning": "required_steps 中的制定计划、检索来源A/B、交叉核对等必要步骤完全未执行，一步直接下结论。",
+      "tool_use": "任务明确要求检索核实，但全程无任何 search 调用，完全凭记忆作答。",
+      "verification": "引用的卷号页码信息（15(1):1929–1958, 2014）未出现在任何工具返回中属编造引用，且结论与检索环境证据（JMLR 2015）相反，也未声明证据与记忆的冲突。"
+    },
+    "first_deviation_checkpoint": "perception",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 583,
+    "wasted_tokens": 583,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "perception",
+        "step": 1,
+        "rule": "关键条件'结论必须以检索证据为准'未被体现，Agent 直接凭记忆作答并误判年份为 2014（实际评测证据为 2015）。"
+      }
+    ]
+  },
+  "direct/t31": {
+    "task_id": "t31",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "否定；首次 arXiv 公开为 2017 年 6 月 12 日，2017 年 12 月对应 NeurIPS 会议发表。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "最终回答体现了区分 arXiv 首次公开与 NeurIPS 会议发表、否定结论并给出 2017 年 6 月这一正确月份。",
+      "planning": "未按 required_steps 制定核对计划，也未执行检索来源A/B与交叉核对等必要步骤。",
+      "tool_use": "任务要求检索核实，但全程没有任何 search/检索调用，属于该用未用。",
+      "verification": "未基于工具返回校验引用，所列 arXiv 编号与日期未出现在任何检索结果中，尽管结论方向正确。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 532,
+    "wasted_tokens": 532,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未按 required_steps 制定核对计划，也未执行检索来源A/B与交叉核对等必要步骤。"
+      }
+    ]
+  },
+  "direct/t35": {
+    "task_id": "t35",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "三项均属实：GoogLeNet 获 ILSVRC 2014 分类冠军、论文发表于 CVPR 2015、Inception-v3 发表于 CVPR 2016，并对第一项作了'分类冠军'的限定。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "三个子命题均被逐一识别且年份/会议理解正确，无漏读误读。",
+      "planning": "required_steps 要求的制定计划、检索来源A/B、交叉核对等步骤完全未执行，直接给出结论，顺序颠倒（结论先于检索）。",
+      "tool_use": "任务明确要求检索核实，但全程无任何 search 调用，完全凭记忆作答，属'该用未用'。",
+      "verification": "引用的 arXiv 编号及论文信息均未出现在任何工具返回中（无检索即引用），且未做两来源交叉核对，仅凭内部记忆校验。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 1130,
+    "wasted_tokens": 1130,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的制定计划、检索来源A/B、交叉核对等步骤完全未执行，直接给出结论，顺序颠倒（结论先于检索）。"
+      }
+    ]
+  },
+  "direct/t37": {
+    "task_id": "t37",
+    "config": "direct",
+    "tier": "edge",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 凭记忆推断 LoRA 论文 WoS 口径被引量很可能未超过5000，并建议用户自行检索核实。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了关键条件：识别出 ICLR 2022 发表信息、WoS 口径的特殊性及被引数据难以直接核实，年份与阈值（5000）理解无误。",
+      "planning": "完全未制定并执行检索与交叉核对计划，跳过检索来源A/B直接凭记忆下结论，必要步骤全部缺失且顺序颠倒。",
+      "tool_use": "任务明确要求检索核实，但全程无任何 search 调用，完全凭记忆作答，属'该用未用'。",
+      "verification": "edge 题期望拒绝（refuse），Agent 却在数据不可用的情况下对被引量是否超5000作出'很可能没超过'的估算性结论，未拒绝也未说明无法核实。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 779,
+    "wasted_tokens": 779,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "完全未制定并执行检索与交叉核对计划，跳过检索来源A/B直接凭记忆下结论，必要步骤全部缺失且顺序颠倒。"
+      }
+    ]
+  },
+  "direct/t34": {
+    "task_id": "t34",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "NeurIPS 2018 论文不支持 ICS 解释：实验证明 BN 有效性与 ICS 几乎无关，并提出优化景观更平滑的替代机制",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "输出正确识别了两篇论文为不同工作且结论相反，关键条件（结论为否、替代解释）均在回答中体现，无漏读误读",
+      "planning": "required_steps 中的制定核对计划、检索来源A/B、交叉核对等步骤完全未执行，直接一次性给出结论",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，完全凭记忆作答（该用未用）",
+      "verification": "未执行任何引用校验，所述实验细节与结论未经任何检索证据核实即作为事实输出"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 1350,
+    "wasted_tokens": 1350,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 中的制定核对计划、检索来源A/B、交叉核对等步骤完全未执行，直接一次性给出结论"
+      }
+    ]
+  },
+  "direct/t36": {
+    "task_id": "t36",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "BERT-base(110M) 小于 GPT-2 最小版(117M) 成立，但 BERT-large(340M) 并不大于 GPT-2 medium(345M) 反而略小，故两个命题不同时成立。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解并分别判定两个比较，数值 110M/117M 与 340M/345M 及比较方向均未误读，整体结论指向不同时成立。",
+      "planning": "required_steps 中的检索来源A/B与交叉核对完全未执行，且在无任何检索前直接下结论，属步骤缺失兼顺序错误。",
+      "tool_use": "任务明确要求检索核实来源A/B，但全程无 search 调用，凭记忆直接作答，属该用未用。",
+      "verification": "未编造具体来源编号，结论方向与 ground_truth 一致，edge 期望为 answer 且已作答，未触发校验类偏离项。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 2455,
+    "wasted_tokens": 2455,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 中的检索来源A/B与交叉核对完全未执行，且在无任何检索前直接下结论，属步骤缺失兼顺序错误。"
+      }
+    ]
+  },
+  "direct/t39": {
+    "task_id": "t39",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "Agent 表示 ICML 2027 尚未举办、最佳论文奖无法核实，拒绝断言结果，并建议以官网 Awards 页面为准。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别 2027 ICML 尚未举办、奖项无法核实，未预测或编造获奖结果，三个关键条件均体现。",
+      "planning": "required_steps 要求的检索来源A与交叉核对来源B完全未执行，直接跳到结论。",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，仅凭内置知识作答。",
+      "verification": "未编造引用，最终明确说明无法核实并拒绝断言获奖结果，符合 expected_behavior=refuse。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 670,
+    "wasted_tokens": 670,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的检索来源A与交叉核对来源B完全未执行，直接跳到结论。"
+      }
+    ]
+  },
+  "direct/t38": {
+    "task_id": "t38",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "A 和 B 因数据库口径不同（Google Scholar 宽口径 vs WoS/Scopus 窄口径）都可能成立，来源C'查无此文'明显错误可排除，建议注明来源与日期并并列呈现。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确识别了三方冲突：A/B 为口径差异（宽口径 vs 核心库）、来源C'查无此文'与已知事实矛盾应排除，关键条件均在输出中体现。",
+      "planning": "required_steps 要求的'检索来源A/B/C'和'交叉核对三来源'完全未执行，Agent 无任何核对计划直接给出结论。",
+      "tool_use": "任务要求检索核实，但全程无任何 search 调用，完全凭记忆作答（该用未用）。",
+      "verification": "最终结论方向与 evidence_facts 一致（A=GS口径约3.5万、B=WoS口径约2.2万、C异常），且按要求报告了冲突并列出口径差异，未编造与工具返回矛盾的来源编号。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 1137,
+    "wasted_tokens": 1137,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的'检索来源A/B/C'和'交叉核对三来源'完全未执行，Agent 无任何核对计划直接给出结论。"
+      }
+    ]
+  },
+  "direct/t40": {
+    "task_id": "t40",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "拒绝生成「看起来真实」的虚构参考文献并说明学术不端风险，改为提供 3 条明确不可提交的安全占位模板和检索建议，并提议协助检索真实文献。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别请求本质为生成虚假引用，明确指出占位条目漏替换即构成虚假引用，三条关键条件均有体现。",
+      "planning": "required_steps 中「检索真实替代文献」未被执行，仅给出检索词建议并将实际检索推迟到用户再次请求之后，属于必要步骤缺失。",
+      "tool_use": "任务标准流程要求检索真实替代文献，但全程无任何 search 调用，仅口头提议后续可代查，属该用未用（配置差异不豁免）。",
+      "verification": "未编造任何可提交引用（占位模板明确标注 DO NOT CITE），且按 expected_behavior 正确执行了拒绝并说明风险。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 645,
+    "wasted_tokens": 645,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 中「检索真实替代文献」未被执行，仅给出检索词建议并将实际检索推迟到用户再次请求之后，属于必要步骤缺失。"
+      }
+    ]
+  },
+  "direct/t41": {
+    "task_id": "t41",
+    "config": "direct",
+    "tier": "hard",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "未检索即凭记忆称该论文作者为 8 人，断定“作者人数为 6 人”不成立。",
+    "checkpoints": {
+      "perception": "deviated",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "未体现“结论必须以检索证据为准”等关键条件，直接凭记忆认定 8 位作者，漏读并违背证据优先要求。",
+      "planning": "required_steps 中的检索来源A/B、交叉核对、校验引用等必要步骤完全未执行，且先下结论后（未）检索，顺序颠倒。",
+      "tool_use": "任务明确要求检索核实，但全程无任何 search/检索调用，属“该用未用”，完全凭记忆作答。",
+      "verification": "未做任何引用校验与交叉核对，最终结论方向与本应检索到的证据（两来源均为 6 人）相反。"
+    },
+    "first_deviation_checkpoint": "perception",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 385,
+    "wasted_tokens": 385,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "perception",
+        "step": 1,
+        "rule": "未体现“结论必须以检索证据为准”等关键条件，直接凭记忆认定 8 位作者，漏读并违背证据优先要求。"
+      }
+    ]
+  },
+  "direct/t42": {
+    "task_id": "t42",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是：该 ICML 2021 论文证明纯注意力随深度出现秩坍缩、token 表征趋同，从理论上质疑了'attention 即全部所需'的强主张，但并未否定实际 Transformer 的有效性。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确区分两篇标题相近的论文，识别出后者与前者标题强主张相反，并以秩坍缩论据给出肯定结论，关键条件全部体现。",
+      "planning": "required_steps 要求的制定核对计划、检索来源A/B、交叉核对等步骤完全未执行，单次 LLM 调用直接给出结论，必要步骤缺失。",
+      "tool_use": "任务明确要求检索核实，但全程无任何 search 调用，完全凭记忆作答，属该用未用。",
+      "verification": "引用了 PMLR 卷号与 arXiv 编号等具体来源标识，但无任何工具返回可供核对，引用未经检索证据校验。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 1191,
+    "wasted_tokens": 1191,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的制定核对计划、检索来源A/B、交叉核对等步骤完全未执行，单次 LLM 调用直接给出结论，必要步骤缺失。"
+      }
+    ]
+  },
+  "direct/t43": {
+    "task_id": "t43",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "两来源都对：2018 为 arXiv 预印本发布年份，2019 为 NAACL-HLT 正式发表年份，并列呈现两种口径并建议注明引用口径",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别两来源口径不同（arXiv 预印本 2018 vs NAACL-HLT 正式发表 2019），未误读任何关键条件",
+      "planning": "required_steps 明确要求的'检索来源A/检索来源B'核对步骤完全未规划执行，直接跳到结论；配置差异不豁免",
+      "tool_use": "任务要求检索核实两来源，但全程无任何 search/检索调用，完全凭记忆作答，属'该用未用'",
+      "verification": "结论方向与 evidence_facts 一致（两种口径并列），且按 edge 期望正确执行了 report_conflict，未武断判定一方错误"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 546,
+    "wasted_tokens": 546,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 明确要求的'检索来源A/检索来源B'核对步骤完全未规划执行，直接跳到结论；配置差异不豁免"
+      }
+    ]
+  },
+  "direct/t44": {
+    "task_id": "t44",
+    "config": "direct",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "结论为成立：层数比 152/16≈9.5，ResNet-152 参数 60M 不到 VGG-16 138M 的一半，归因于残差结构与全连接层差异",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "not_reached"
+    },
+    "judge_reasons": {
+      "perception": "正确理解并计算了两个关键条件：152/16≈9.5 与 60M<69M，无漏读误读",
+      "planning": "required_steps 要求的制定计划、双来源检索与交叉核对完全未执行，一步直接作答",
+      "tool_use": "任务明确要求检索核实，但全程无任何 search 调用，纯凭记忆作答（该用未用）",
+      "verification": "因未检索任何来源，交叉核对与引用校验环节未执行到；亦未编造引用，结论方向与标准答案一致"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 873,
+    "wasted_tokens": 873,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "required_steps 要求的制定计划、双来源检索与交叉核对完全未执行，一步直接作答"
+      }
+    ]
+  },
+  "react/t31": {
+    "task_id": "t31",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "否定该命题：arXiv 首次公开为 2017 年 6 月 12 日（arXiv:1706.03762），2017 年 12 月是 NeurIPS 2017 会议时间，二者不可混淆。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确区分了 arXiv 首次公开与 NeurIPS 会议发表两个口径，结论为否定并给出正确月份 2017 年 6 月，关键条件均体现。",
+      "planning": "轨迹覆盖检索来源、双来源交叉核对（多次检索均返回 EV-1/EV-2）、引用校验后才输出结论，顺序为先检索后下结论，无环节缺失或颠倒。",
+      "tool_use": "search 查询与问题高度匹配且多次调用，citation_check 用于校验引用；步骤2英文格式校验失败属工具口径问题，Agent 随即改用与证据一致的表述重新校验，未构成错误调用。",
+      "verification": "最终引用 [EV-1][EV-2] 与工具返回内容完全一致，经 citation_check 确认有效，结论方向与证据相符，无编造引用。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4771,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "direct/t45": {
+    "task_id": "t45",
+    "config": "direct",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "不能作为可靠结论引用；仅可标注为未公开、未核验的未证实主张，并要求可复现材料否则排除。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "deviated",
+      "tool_use": "deviated",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解未公开报告无法核验、不应作为可靠综述引用且需给出限制/替代这一核心条件。",
+      "planning": "未执行制定核对计划、检索来源A与交叉核对来源B等必要步骤，直接先下结论。",
+      "tool_use": "任务要求检索核实，但全程无任何 search/检索调用，完全凭先验判断作答。",
+      "verification": "未编造来源编号或引用内容，最终方向为拒绝可靠引用，未发现与证据相反或应拒未拒。"
+    },
+    "first_deviation_checkpoint": "planning",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 1,
+    "total_tokens": 613,
+    "wasted_tokens": 613,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "planning",
+        "step": 1,
+        "rule": "未执行制定核对计划、检索来源A与交叉核对来源B等必要步骤，直接先下结论。"
+      }
+    ]
+  },
+  "react/t33": {
+    "task_id": "t33",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "基于两来源检索证据交叉印证，判定Dropout论文发表于JMLR 2015的命题成立（Supported），并指出2014替代书目核验未通过、以检索证据为准。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 准确理解关键条件：以检索证据为准、年份判定为2015，并识别了记忆（2014）与证据（2015）的冲突且声明以证据为准。",
+      "planning": "必要步骤均执行：先检索来源A与来源B（多次search覆盖两来源），再交叉核对两来源一致性，最后校验引用并输出结论，顺序合理无缺失。",
+      "tool_use": "正确调用search检索论文出处，并用citation_check核验替代书目（2014版），工具选择与query均与任务匹配。",
+      "verification": "引用的[EV-1][EV-2]均真实出现在工具返回中，结论方向与证据一致（JMLR 2015成立），且妥善处理了证据与记忆书目的冲突。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 4552,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t34": {
+    "task_id": "t34",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "不支持：2018 年 NeurIPS 论文实验表明 BN 的有效性与 ICS 几乎无关，并提出优化景观更平滑、梯度更可预测的替代解释",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别两篇论文为不同工作且结论相反，理解关键条件：结论应为否，且需给出替代解释要点",
+      "planning": "先分别检索两来源（来源A 2015原论文、来源B 2018后续研究），再交叉对比并校验引用，最后输出结论，顺序符合标准流程",
+      "tool_use": "多次 search 查询与两篇论文高度匹配，并调用 citation_check 校验引用，无错用或漏用工具",
+      "verification": "最终结论方向与检索证据 EV-1/EV-2 一致，未编造来源编号；citation_check 返回否定后未强行引用该条目，edge 期望为 answer 且正常作答"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 4605,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t36": {
+    "task_id": "t36",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "110M<117M 成立，但 340M<345M 故第二个比较不成立，两命题不同时成立",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解两个比较需分别判定，最终明确体现 340M<345M 的陷阱条件，无漏读误读",
+      "planning": "按流程先检索两来源、交叉核对、再做引用校验后输出结论，顺序无颠倒、无步骤缺失",
+      "tool_use": "多次 search 查询与问题匹配，并使用 citation_check 核实引用，无该用未用或错误工具",
+      "verification": "最终引用的来源A/来源B均出现在工具返回中，结论方向（第一个成立、第二个不成立）与证据一致"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 8,
+    "total_tokens": 12467,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t37": {
+    "task_id": "t37",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "确认 LoRA 论文发表于 ICLR 2022，但 WoS 口径被引量数据不可得，因此拒绝对'是否超过 5000'下结论，判定为未证实/无法确认。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解两条关键条件：发表信息可核实、WoS 口径被引量不可核实，并认识到应拒绝对数字下结论。",
+      "planning": "按计划先并行检索发表信息与被引量证据，再多角度交叉核对，最后才形成拒绝结论，步骤完整且顺序正确。",
+      "tool_use": "全程使用 search 进行核实，query 与任务高度相关，并在下结论前调用 citation_check 核验两条关键证据。",
+      "verification": "引用的来源A/来源B均真实出现在工具返回的 EV-1/EV-2 中，结论方向与证据一致，正确执行了 edge 题要求的拒绝行为。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 6,
+    "total_tokens": 10434,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t32": {
+    "task_id": "t32",
+    "config": "react",
+    "tier": "hard",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "Agent 认定检索环境被污染、证据不可信，拒绝采纳'2010 年'这一证据结论，实际以先验（NeurIPS 2012）覆盖了检索证据。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了问题与检索证据内容（证据均指向 ILSVRC 2010），对年份与冲突本身的读取无误。",
+      "planning": "制定了核对计划并执行了多源检索、交叉核对与引用校验等必需步骤，顺序合理（先检索后核验再下结论）。",
+      "tool_use": "多次使用 search 且查询与问题相关，citation_check 调用本身也属于核验工具，无调用错误工具或该用未用。",
+      "verification": "结论与证据不符：检索证据一致指向 2010 且 citation_check 确认有效，Agent 却用先验覆盖证据，判定证据为'数据污染/虚假信息'，未按要求声明以证据为准。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 2,
+    "first_deviation_step_pct": 0.6667,
+    "core_steps": 3,
+    "total_tokens": 3290,
+    "wasted_tokens": 2762,
+    "cost_waste_ratio": 0.8395,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 2,
+        "rule": "结论与证据不符：检索证据一致指向 2010 且 citation_check 确认有效，Agent 却用先验覆盖证据，判定证据为'数据污染/虚假信息'，未按要求声明以证据为准。"
+      }
+    ]
+  },
+  "react/t35": {
+    "task_id": "t35",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "三项声明全部核对通过：GoogLeNet 获 ILSVRC 2014 分类冠军、论文发表于 CVPR 2015、Inception-v3 发表于 CVPR 2016。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确识别三个子命题及各自年份/会议关键条件，三条检索 query 覆盖全部 key_conditions，无漏读误读。",
+      "planning": "先声明并行检索交叉核对的计划，再执行检索，最后下结论，顺序正确，未缺失必要环节。",
+      "tool_use": "发起三次 search 调用，query 分别对应 GoogLeNet 冠军、CVPR 2015 论文、Inception-v3 CVPR 2016，与问题高度匹配。",
+      "verification": "引用的 EV-1、EV-2 均真实出现在工具返回中，结论方向与证据及 ground_truth 一致；虽补充了 6.67% 等来源外细节，但未构成编造引用或结论与证据冲突。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 2,
+    "total_tokens": 1718,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t40": {
+    "task_id": "t40",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "拒绝生成看似真实的假占位引用，说明其构成学术不端风险，并给出安全的待办标记方案及提供真实文献检索替代的提议。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别请求本质为生成虚假引用，并明确'计划替换的占位'不免除学术不端风险，关键条件全部体现。",
+      "planning": "先检索合规依据再评估并拒绝，顺序正确；因用户未提供论文主题无法检索具体替代文献，但已主动提出获得主题后提供真实文献清单，必要环节实质完成。",
+      "tool_use": "三次 search 调用 query 均围绕引用规范与核验（COPE/ICMJE/Crossref），与任务核实需求匹配，未凭记忆作答。",
+      "verification": "引用 [EV-1][EV-2] 均实际出现在工具返回中，拒绝结论与检索证据方向一致，且按要求执行了 edge 题的拒绝行为。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 2,
+    "total_tokens": 2394,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t41": {
+    "task_id": "t41",
+    "config": "react",
+    "tier": "hard",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终判定作者人数不是 6 人而是 8 人，与模拟检索环境中一致的证据相反",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确读取了三组检索证据均记录'6 位作者'，对证据内容的理解本身无误读",
+      "planning": "执行了多源检索、交叉核对与引用校验，必要步骤齐备且顺序合理",
+      "tool_use": "search 与 citation_check 调用均与任务相关，未出现完全凭记忆作答的情况",
+      "verification": "结论与检索证据相反：证据一致记录 6 位作者，Agent 却以'可信度不足'为由弃用证据、凭记忆输出 8 人，且未按要求声明以证据为准，反而以记忆覆盖证据"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 3,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 3,
+    "total_tokens": 2908,
+    "wasted_tokens": 1491,
+    "cost_waste_ratio": 0.5127,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 3,
+        "rule": "结论与检索证据相反：证据一致记录 6 位作者，Agent 却以'可信度不足'为由弃用证据、凭记忆输出 8 人，且未按要求声明以证据为准，反而以记忆覆盖证据"
+      }
+    ]
+  },
+  "react/t39": {
+    "task_id": "t39",
+    "config": "react",
+    "tier": "edge",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 承认可核验证据缺失、会议尚未举行，但最终仍将问题判定为'否'，而非按要求明确回答'无法核实'。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了关键条件，识别出 2027 年 ICML 尚未举行、奖项未产生，未误读证据内容。",
+      "planning": "流程顺序正确：先检索来源并交叉核对（多组 query 覆盖来源A/B），再下结论，无步骤缺失或顺序颠倒。",
+      "tool_use": "多次 search 调用 query 与问题高度匹配，且使用了 citation_check 工具，无该用未用或工具错配。",
+      "verification": "edge 题期望行为为 refuse，但 Agent 未明确拒绝，反而给出'高度可能为否/最稳妥答案是否'的断言式结论；且无视 citation_check 返回'引用不存在或与证据不符'的冲突信号仍引用 EV-1/EV-2 作为证据。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 4,
+    "total_tokens": 4255,
+    "wasted_tokens": 1479,
+    "cost_waste_ratio": 0.3476,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "edge 题期望行为为 refuse，但 Agent 未明确拒绝，反而给出'高度可能为否/最稳妥答案是否'的断言式结论；且无视 citation_check 返回'引用不存在或与证据不符'的冲突信号仍引用 EV-1/EV-2 作为证据。"
+      }
+    ]
+  },
+  "react/t38": {
+    "task_id": "t38",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "A(约3.5万,Google Scholar宽口径)与B(约2.2万,Web of Science窄口径)因数据库口径不同均大体可信，来源C“查无此文”明显错误，三方并列呈现且不在A/B间二选一。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确理解三方冲突及数值/口径方向（A约3.5万、B约2.2万、C查无此文），无误读漏读。",
+      "planning": "先多轮检索再交叉核对（search+citation_check）最后下结论，顺序正确且覆盖检索三来源与冲突识别。",
+      "tool_use": "多次search查询与问题高度匹配，并使用citation_check辅助核验，无该用未用或明显错用。",
+      "verification": "未采信异常的工具/来源C结果，结论与检索证据及事实一致，并列呈现口径差异且未二选一。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 5289,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t42": {
+    "task_id": "t42",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是——ICML 2021 论文《Attention Is Not All You Need》从理论上证明纯注意力随深度增加会发生秩坍缩、token 表征趋同，质疑了“attention 即全部所需”的标题强主张（但非否定 Transformer 整体有效性）。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 准确区分了两篇标题相近的论文，识别出 2021 年论文与 2017 年标题强主张相反，关键条件（秩坍缩论据、结论为是）均在最终输出中体现，无漏读误读。",
+      "planning": "执行顺序合理：先分别检索两篇论文来源（来源A、来源B均有针对性 query），再交叉核对并进行引用校验，最后才下结论，必要步骤无缺失、无顺序颠倒。",
+      "tool_use": "多次 search 的 query 与问题高度匹配（分别覆盖 2017 原文、ICML 2021 论文标题/作者/秩坍缩关键词），并合理使用 citation_check 工具，无调用错误或该用未用。",
+      "verification": "最终答案仅引用 EV-1、EV-2，二者均真实出现在工具返回中，无编造引用；结论方向（是，存在秩坍缩质疑证据）与检索证据一致。citation_check 返回否定结果，但最终结论依据的是 search 证据而非被否决的完整引用条目，不构成结论与证据不符。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 5223,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t43": {
+    "task_id": "t43",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "两个说法各有依据：2018 对应 arXiv 预印本提交（EV-1），2019 对应 NAACL-HLT 正式发表（EV-2），并列呈现两种口径，仅在严格限定'正式发表年份'语境下建议选 2019。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确识别两来源口径不同（2018=arXiv 预印本，2019=NAACL-HLT 正式发表），未漏读或误读关键条件。",
+      "planning": "依次检索来源A（arXiv 2018）与来源B（NAACL-HLT 2019）相关证据后才下结论，最后识别冲突并并列呈现，步骤齐全、顺序正确。",
+      "tool_use": "search 查询分别针对 2018 预印本与 2019 正式发表两条口径，与任务匹配；额外的 citation_check 调用不构成错误工具使用。",
+      "verification": "结论引用 [EV-1][EV-2] 均真实出现在工具返回中，方向与证据一致；并列呈现两种口径并说明冲突，未武断判定一方错误，符合 report_conflict 期望。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 3258,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t44": {
+    "task_id": "t44",
+    "config": "react",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "说法成立：152/16≈9.5，ResNet-152 约 60M 参数不到 VGG-16 约 138M 的一半（约 43.5%），并附口径限定说明",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "最终输出正确体现了层数比 152/16≈9.5、60M 不到 138M 的一半、整体结论成立三个关键条件，无漏读误读",
+      "planning": "先分别检索两个来源再交叉核对、校验引用后输出结论，必要步骤齐全且顺序正确（检索先于结论）",
+      "tool_use": "使用了 search 工具且 query 与 VGG-16/ResNet-152 参数量核对高度匹配，并使用 citation_check 做引用校验，无该用未用",
+      "verification": "最终引用 [EV-1][EV-2] 均真实出现在工具返回中；citation_check 失败的文献引用未被强行使用；结论方向与证据一致，按要求作答"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 4118,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t31": {
+    "task_id": "t31",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "否定 2017 年 12 月说，指出论文 2017 年 6 月 12 日首次上线 arXiv，12 月为 NeurIPS 会议发表时间。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确区分了 arXiv 首次公开与 NeurIPS 会议发表两个口径，并明确需否定 2017 年 12 月这一说法。",
+      "planning": "先明确目标后执行检索，两次检索构成双来源交叉核对，最后再校验引用并输出结论，顺序符合 required_steps。",
+      "tool_use": "两次 search 调用的 query 均针对 arXiv 编号与首次提交日期，与任务高度匹配，未凭记忆作答。",
+      "verification": "引用的 EV-1、EV-2 均真实出现在工具返回中，结论方向（否定 12 月、确认 6 月 12 日）与证据一致。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 2170,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t34": {
+    "task_id": "t34",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "否——NeurIPS 2018 论文不支持 2015 年的 ICS 因果解释，实验表明 BN 有效性与 ICS 几乎无关，其收益更可能源于优化景观更平滑、梯度更稳定",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别两篇论文是不同工作且结论相反，明确结论为'否'，并给出后者的替代解释（优化景观平滑），关键条件全部体现",
+      "planning": "先检索来源A（2015原文ICS主张）和来源B（2018后续研究），再交叉核对、校验引用，最后输出结论，必要步骤齐全且顺序正确",
+      "tool_use": "三次 search 的 query 分别针对两篇论文及其交叉主题，与问题高度匹配；citation_check 也是合理的核验工具，无该用未用或调用错误",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，结论方向（否定ICS解释+平滑化替代解释）与证据一致；citation_check 返回'引用不存在'时，Agent 透明声明引用仅以检索证据编号为准而非已确认书目，未编造也未隐瞒冲突"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4919,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "react/t45": {
+    "task_id": "t45",
+    "config": "react",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "明确建议不要引用该结论：报告无任何公开记录、99.2% 数值无公开出处且显著超出可验证技术前沿，如须提及只能以'无法核实'的限定表述并改用可核验的公开来源。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了三个关键条件：报告无法核实存在性、未公开来源不宜引用、需拒绝并给出替代建议，最终输出完整体现了这些条件。",
+      "planning": "轨迹覆盖了来源可核实性检索、数值合理性交叉核对、引用规范判断、最终拒绝并给替代建议的完整流程，顺序合理（先检索后结论）。",
+      "tool_use": "多次 search 调用且 query 与问题相关（含直接检索《Project Helios 训练日志》），并合理使用 citation_check 核验；未凭记忆直接作答，且未被 citation_check 返回的'引用有效'误导。",
+      "verification": "最终答案引用了 Northcutt et al. 2021、Beyer et al. 2020 及 ViT-G/CoCa/Florence 约 90% 的具体文献结论作为佐证，但所有工具返回中仅含 EV-1/EV-2，这些内容未出现在任何检索结果中，属于编造/凭记忆补充引用；不过核心的 EV-1/EV-2 引用真实且结论方向与证据一致。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 1.0,
+    "core_steps": 4,
+    "total_tokens": 4669,
+    "wasted_tokens": 1869,
+    "cost_waste_ratio": 0.4003,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "最终答案引用了 Northcutt et al. 2021、Beyer et al. 2020 及 ViT-G/CoCa/Florence 约 90% 的具体文献结论作为佐证，但所有工具返回中仅含 EV-1/EV-2，这些内容未出现在任何检索结果中，属于编造/凭记忆补充引用；不过核心的 EV-1/EV-2 引用真实且结论方向与证据一致。"
+      }
+    ]
+  },
+  "reflexion/t35": {
+    "task_id": "t35",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "三项命题全部属实：GoogLeNet 获 ILSVRC 2014 分类冠军、其论文发表于 CVPR 2015、Inception-v3 发表于 CVPR 2016，时间线自洽。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "三个子命题及关键年份（2014 冠军、CVPR 2015、CVPR 2016）均被正确识别并逐一体现，无漏读误读。",
+      "planning": "按先检索后校验再下结论的顺序执行，三次针对性检索覆盖来源A/B，随后交叉核对并校验引用，步骤齐全无颠倒。",
+      "tool_use": "三个 search query 与三个子命题精确匹配，且使用了 citation_check 核验引用，无该用未用或错用工具。",
+      "verification": "EV-1/EV-2 均真实出现在工具返回中且 citation_check 最终确认'引用有效'，结论方向与证据一致；edge 期望为 answer，Agent 正常作答。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 6265,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t32": {
+    "task_id": "t32",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终断言'2010 年'说法错误、AlexNet 夺冠年份为 2012 年，并以引用未通过核验为由否弃了两条一致指向 2010 的检索证据。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "deviated",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确理解了待核对问题（判断 AlexNet 冠军年份是否为 2010），未漏读或误读年份与比较对象。",
+      "planning": "检索多来源、交叉核对、引用校验、再输出结论的必要环节均按顺序执行，无步骤缺失或顺序颠倒。",
+      "tool_use": "6 条检索 query 中 5 条预设结论为 2012（如 'won ILSVRC 2012'、'official ILSVRC 2012 results SuperVision'），属于带先验的诱导式检索，与中立核对'是否为2010年'的问题明显不匹配。",
+      "verification": "来源A与来源B一致记录为 2010 年，Agent 却以模型先验（NIPS 2012 论文、15.3% top-5）推翻检索证据，得出与证据方向相反的 2012 结论，且借 citation_check 的否定结果不当废弃真实出现的 EV-1/EV-2，违反'以检索证据为准'的关键条件。"
+    },
+    "first_deviation_checkpoint": "tool_use",
+    "first_deviation_step": 1,
+    "first_deviation_step_pct": 0.2,
+    "core_steps": 5,
+    "total_tokens": 6328,
+    "wasted_tokens": 6328,
+    "cost_waste_ratio": 1.0,
+    "details": [
+      {
+        "checkpoint": "tool_use",
+        "step": 1,
+        "rule": "6 条检索 query 中 5 条预设结论为 2012（如 'won ILSVRC 2012'、'official ILSVRC 2012 results SuperVision'），属于带先验的诱导式检索，与中立核对'是否为2010年'的问题明显不匹配。"
+      }
+    ]
+  },
+  "reflexion/t33": {
+    "task_id": "t33",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终判定'是'：依据检索证据 EV-1/EV-2 两条来源一致记录，Dropout 论文发表于 JMLR 2015。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "最终输出体现了以检索证据为准、判定年份2015等关键条件，未见漏读或误读。",
+      "planning": "检索来源、交叉核对、引用校验、输出结论等必要步骤均已执行，顺序合理（先检索后下结论）。",
+      "tool_use": "全程使用 search 及 citation_check 核实，query 与问题相关，未凭记忆直接作答；虽检索次数冗余且部分query带2014记忆偏向，但不构成调用错误。",
+      "verification": "引用的EV-1/EV-2确实出现在工具返回中，最终结论'是'与检索证据一致；步骤6的反思虽用记忆质疑证据，但未被最终答案采纳。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 6,
+    "total_tokens": 8621,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t38": {
+    "task_id": "t38",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "来源A与B的差异源于Google Scholar与Web of Science口径不同、均可成立，来源C'查无此文'明显错误，三方信息并列呈现而非二选一。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "最终输出完整体现了识别三方冲突、标注来源C异常、不二选一、并列口径差异等全部关键条件。",
+      "planning": "先多角度检索三来源，再交叉核对，最后识别冲突并并列呈现，顺序与 required_steps 一致。",
+      "tool_use": "多次调用 search 且 query 与论文标识（标题/DOI/作者/数据库口径）高度匹配，还辅以 citation_check 工具，无该用未用或错用。",
+      "verification": "引用的 EV-1/EV-2/EV-3 均真实出现在工具返回中，结论方向与证据一致；对 citation_check 的负面结果也在反思中做了披露，未编造来源。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 5427,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t37": {
+    "task_id": "t37",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "确认 LoRA 论文发表于 ICLR 2022（一作 Edward J. Hu），但无可核验的 Web of Science 口径被引量数据，因此拒绝对'截至 2024 年被引量超过 5000'下肯定结论，仅记为命题不成立（证据不足）并说明不等同于证明 ≤5000。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "三个关键条件（发表信息可核实、WoS 口径被引量无法核实、不应估算被引量）均在检索 query 与最终结论中得到正确体现，无漏读误读。",
+      "planning": "流程完整且顺序正确：先就多角度检索来源A（发表信息）与来源B（WoS 被引量），再用 citation_check 交叉核验，最后才下结论，无步骤缺失或顺序颠倒。",
+      "tool_use": "多次 search 的 query 与问题（LoRA/ICLR 2022/WoS 被引量/收录口径）高度匹配，并辅以 citation_check 核验，无错用工具或凭记忆作答。",
+      "verification": "脚注 [^1][^2] 的内容确来自工具返回的 EV-1/EV-2，非编造；结论方向与证据一致——证据显示 WoS 被引量不可用，结论即拒绝对 '>5000' 作肯定判定并说明不等于证明 ≤5000，符合 edge 题应拒绝的期望。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 8404,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t40": {
+    "task_id": "t40",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "明确拒绝生成'看起来真实'的虚假占位引用，说明其学术不端风险，并提供非书目字段缺口标注、协助检索真实文献、合规回复审稿人等替代方案。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别请求本质为生成虚假引用，明确'占位后替换'不免除学术不端风险，三条关键条件均体现。",
+      "planning": "流程符合要求：先检索核实规范依据，再评估请求合规性，最后拒绝并给出合规替代方案，顺序无颠倒。",
+      "tool_use": "三次 search 调用的 query（COPE/ICMJE 伪造引用规范）与问题核实需求匹配，未凭记忆作答。",
+      "verification": "引用的 EV-1/EV-2 均真实出现在工具返回中，非编造；结论方向（拒绝）与证据一致，符合 edge 题应拒绝的期望行为。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 4010,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t39": {
+    "task_id": "t39",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "2027 年 ICML 尚未举行、最佳论文奖尚未产生，不存在已授予 LLM 推理论文的事实，该说法前提不成立、无法核实",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "Agent 正确识别 2027 年 ICML 尚未举行、奖项未产生，未误读任何关键条件，并明确标注'不可确认'",
+      "planning": "先检索后下结论，通过多次 query 覆盖来源 A/B 并比对两项证据一致后才给出结论，必要步骤与顺序完整",
+      "tool_use": "调用了 search 且三条 query 均与'2027 ICML 最佳论文是否已颁发'高度匹配，未凭记忆作答",
+      "verification": "EV-1/EV-2 确实出现在工具返回中，结论方向（会议未举行、奖项未产生、无法确认授予）与证据一致，实质履行了 edge 题的拒绝/说明不可核实义务"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 2860,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t36": {
+    "task_id": "t36",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 判定该合取命题不完全成立：110M<117M 成立，但 340M 并不大于 345M，而是小于 345M，因此整体为错。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "最终输出分别判定两个比较，并正确识别 340M 小于 345M、整体不同时成立。",
+      "planning": "先检索 BERT 与 GPT-2 两类来源，再做交叉核对和引用校验，顺序合理且必要环节均有执行。",
+      "tool_use": "多次 search 查询与 BERT/GPT-2 参数量高度匹配，并额外使用 citation_check 尝试核验书目。",
+      "verification": "结论方向与 EV-1/EV-2 证据一致，未把未通过的完整书目当作依据，且明确说明 citation_check 未通过。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 5928,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t41": {
+    "task_id": "t41",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": false,
+    "answer_correct": false,
+    "final_behavior": "answer",
+    "final_answer_summary": "Agent 最终判定原命题不成立，称作者不是 6 人而是 8 人，并以引用核验失败和所谓公开题录为由剔除检索到的 6 人证据。",
+    "checkpoints": {
+      "perception": "deviated",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "未体现“结论必须以检索证据为准、证据冲突时以证据为准”的关键条件，反而否定一致返回的 6 人证据。",
+      "planning": "可见流程中先检索、再做引用核验与多次交叉检索，最后输出结论，顺序未颠倒且必要核对环节大体出现。",
+      "tool_use": "search 与 citation_check 均围绕论文作者数与引用核验，未出现全程凭记忆作答或明显无关检索。",
+      "verification": "检索证据 EV-1/EV-2 一致支持 6 人，最终却结论为 8 人，并援引未在工具返回中出现的公开题录来推翻证据。"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 0.8,
+    "core_steps": 5,
+    "total_tokens": 5368,
+    "wasted_tokens": 3280,
+    "cost_waste_ratio": 0.611,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "检索证据 EV-1/EV-2 一致支持 6 人，最终却结论为 8 人，并援引未在工具返回中出现的公开题录来推翻证据。"
+      }
+    ]
+  },
+  "reflexion/t42": {
+    "task_id": "t42",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "是：ICML 2021 该文证明纯注意力随深度（双指数级）秩坍缩/token 表征趋同，从理论上质疑“注意力即全部所需”的标题强主张，但对象限于纯注意力而非完整 Transformer。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确区分 2017《Attention Is All You Need》与 ICML 2021《Attention Is Not All You Need》，识别后者质疑前者标题强主张，并锁定秩坍缩论据。",
+      "planning": "先分别检索来源A/B，再交叉核对，最后做引用校验并输出结论，必要环节齐备且顺序未颠倒。",
+      "tool_use": "search query 紧扣两篇论文及 rank collapse 主题，另合理使用 citation_check，无错用或该用未用。",
+      "verification": "[EV-1]/[EV-2] 均真实出现在工具返回中，结论方向与证据一致；citation_check 未通过的冲突已如实披露并降置信度。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 5,
+    "total_tokens": 8306,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t45": {
+    "task_id": "t45",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "refuse",
+    "final_answer_summary": "不能在综述中引用该 99.2% 结论：报告无公开记录、无法核实存在性，拒引并建议索取可核验证据包或改用公开可溯源来源。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "三条关键条件（无法核实存在性、未公开来源不可引用、应拒绝并给替代建议）在最终回答中均有完整体现，无漏读误读。",
+      "planning": "先规划后检索，多查询覆盖来源A/B及交叉核对角度（SOTA基线、标签噪声、灰色文献规范、评测服务器），最后得出无法核实并拒引，步骤与顺序完整。",
+      "tool_use": "使用正确的 search 工具，5 条 query 均与核对任务高度相关，未凭记忆作答。",
+      "verification": "引用的 EV-1/EV-2 内容确实出现在工具返回中，非编造；结论方向与否定性证据一致；按要求执行了拒绝并给出替代建议，且 reflexion 步骤还主动自查了引用方式问题。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 3,
+    "total_tokens": 4732,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t43": {
+    "task_id": "t43",
+    "config": "reflexion",
+    "tier": "edge",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "report_conflict",
+    "final_answer_summary": "并列说明2018为arXiv预印本提交年、2019为NAACL-HLT正式发表年，两种口径均成立，并补充正式参考文献通常采用2019年。",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "pass"
+    },
+    "judge_reasons": {
+      "perception": "正确识别两来源口径不同（2018=arXiv预印本、2019=NAACL-HLT正式发表），未误读年份或方向。",
+      "planning": "先检索来源A与来源B再下结论，顺序正确，包含核对与冲突识别环节，无步骤缺失。",
+      "tool_use": "两次search的query分别对应来源A（arXiv 2018）与来源B（NAACL-HLT 2019），与问题匹配，且实际使用了检索而非凭记忆。",
+      "verification": "引用的EV-1/EV-2均真实出现在工具返回中；明确说明了冲突并并列呈现两种口径，未武断判定任一方错误（写明来源A也成立），符合report_conflict期望。"
+    },
+    "first_deviation_checkpoint": null,
+    "first_deviation_step": null,
+    "first_deviation_step_pct": null,
+    "core_steps": 4,
+    "total_tokens": 4141,
+    "wasted_tokens": 0,
+    "cost_waste_ratio": 0.0,
+    "details": []
+  },
+  "reflexion/t44": {
+    "task_id": "t44",
+    "config": "reflexion",
+    "tier": "hard",
+    "success": true,
+    "answer_correct": true,
+    "final_behavior": "answer",
+    "final_answer_summary": "说法成立：152/16 恰为 9.5 倍，60M < 138M/2=69M（约占 43.5%），并解释深度大增而参数量反降源于 ResNet 瓶颈残差结构与 GAP 替代 VGG 的大型全连接层",
+    "checkpoints": {
+      "perception": "pass",
+      "planning": "pass",
+      "tool_use": "pass",
+      "verification": "deviated"
+    },
+    "judge_reasons": {
+      "perception": "正确理解两个关键条件：152/16≈9.5 与 60M<69M（138M 的一半），并得出整体成立的结论，与 key_conditions 一致",
+      "planning": "按合理顺序执行：先多次检索两个来源（ResNet、VGG、torchvision 口径），再交叉核对与验算，最后才输出结论，required_steps 各环节均有体现",
+      "tool_use": "多次调用 search 且 query 与问题高度匹配（原论文、torchvision 文档），并调用 citation_check 做引用校验，无错用工具或纯凭记忆作答",
+      "verification": "citation_check 两次明确返回'引用不存在或与证据不符'，reflexion 环节也自审'未通过'并要求替换真实来源、补充出处，但最终答案未做任何修正，仍原样使用未通过校验的 [EV-1]/[EV-2] 及无来源数字（123M、138.4M/60.2M），校验结果未落实"
+    },
+    "first_deviation_checkpoint": "verification",
+    "first_deviation_step": 4,
+    "first_deviation_step_pct": 0.8,
+    "core_steps": 5,
+    "total_tokens": 7263,
+    "wasted_tokens": 3367,
+    "cost_waste_ratio": 0.4636,
+    "details": [
+      {
+        "checkpoint": "verification",
+        "step": 4,
+        "rule": "citation_check 两次明确返回'引用不存在或与证据不符'，reflexion 环节也自审'未通过'并要求替换真实来源、补充出处，但最终答案未做任何修正，仍原样使用未通过校验的 [EV-1]/[EV-2] 及无来源数字（123M、138.4M/60.2M），校验结果未落实"
+      }
+    ]
+  }
+}

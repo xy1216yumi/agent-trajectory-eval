@@ -1,0 +1,178 @@
+{
+  "mode": "real",
+  "n_traces": 135,
+  "configs": {
+    "direct": {
+      "n": 45,
+      "success_rate": 0.9111,
+      "by_tier": {
+        "easy": 1.0,
+        "medium": 1.0,
+        "hard": 0.7857,
+        "edge": 0.9091
+      },
+      "process_deviation_rate": 1.0,
+      "avg_tokens": 700.2,
+      "avg_steps": 1.0
+    },
+    "react": {
+      "n": 45,
+      "success_rate": 0.9111,
+      "by_tier": {
+        "easy": 1.0,
+        "medium": 1.0,
+        "hard": 0.8571,
+        "edge": 0.8182
+      },
+      "process_deviation_rate": 0.1778,
+      "avg_tokens": 4357.4,
+      "avg_steps": 3.8
+    },
+    "reflexion": {
+      "n": 45,
+      "success_rate": 0.9333,
+      "by_tier": {
+        "easy": 1.0,
+        "medium": 1.0,
+        "hard": 0.8571,
+        "edge": 0.9091
+      },
+      "process_deviation_rate": 0.2667,
+      "avg_tokens": 5658.1,
+      "avg_steps": 4.6
+    }
+  },
+  "real_meta": {
+    "model": "kimi-k3",
+    "date_range": [
+      "2026-09-28 16:30:18",
+      "2026-09-28 20:40:54"
+    ],
+    "total_tokens": 482206
+  },
+  "first_deviation_distribution": {
+    "perception": {
+      "count": 3,
+      "pct_of_deviated": 0.0462
+    },
+    "planning": {
+      "count": 42,
+      "pct_of_deviated": 0.6462
+    },
+    "tool_use": {
+      "count": 1,
+      "pct_of_deviated": 0.0154
+    },
+    "verification": {
+      "count": 19,
+      "pct_of_deviated": 0.2923
+    }
+  },
+  "first_deviation_by_config": {
+    "direct": {
+      "perception": 3,
+      "planning": 42,
+      "tool_use": 0,
+      "verification": 0
+    },
+    "react": {
+      "perception": 0,
+      "planning": 0,
+      "tool_use": 0,
+      "verification": 8
+    },
+    "reflexion": {
+      "perception": 0,
+      "planning": 0,
+      "tool_use": 1,
+      "verification": 11
+    }
+  },
+  "first_deviation_step": {
+    "mean": 1.82,
+    "mean_pct": 0.9475,
+    "by_config": {
+      "direct": {
+        "mean": 1.0,
+        "mean_pct": 1.0
+      },
+      "react": {
+        "mean": 3.5,
+        "mean_pct": 0.9583
+      },
+      "reflexion": {
+        "mean": 3.75,
+        "mean_pct": 0.7436
+      }
+    },
+    "histogram_pct": {
+      "0-25%": 1,
+      "25-50%": 0,
+      "50-75%": 5,
+      "75-100%": 59
+    }
+  },
+  "late_deviation_waste": {
+    "spearman_rho": 0.7259,
+    "p_value": 0.0002,
+    "n_deviated": 65,
+    "avg_waste_early_step1_2": 863.8,
+    "avg_waste_late_step4plus": 2512.2,
+    "waste_fold": 2.91
+  },
+  "intervention": {
+    "n_pairs": 11,
+    "rescued_b": 9,
+    "harmed_c": 2,
+    "rescue_rate": 0.8182,
+    "rescue_rate_ci95": [
+      0.5455,
+      1.0
+    ],
+    "mcnemar_p": 0.0654296875,
+    "success_rate_baseline": 0.9185,
+    "success_rate_after_intervention": 0.9852
+  },
+  "decision_matrix": {
+    "perception": {
+      "name": "感知",
+      "deviation_count": 3,
+      "rescue_rate": 0.3333,
+      "rescue_n": 3,
+      "high_frequency": false,
+      "high_rescuability": false,
+      "decision": "全自动"
+    },
+    "planning": {
+      "name": "规划",
+      "deviation_count": 42,
+      "rescue_rate": 1.0,
+      "rescue_n": 1,
+      "high_frequency": true,
+      "high_rescuability": true,
+      "decision": "检查点确认（人机协同）"
+    },
+    "tool_use": {
+      "name": "工具调用",
+      "deviation_count": 1,
+      "rescue_rate": 1.0,
+      "rescue_n": 1,
+      "high_frequency": false,
+      "high_rescuability": true,
+      "decision": "被动监控"
+    },
+    "verification": {
+      "name": "结果校验",
+      "deviation_count": 19,
+      "rescue_rate": 1.0,
+      "rescue_n": 6,
+      "high_frequency": true,
+      "high_rescuability": true,
+      "decision": "检查点确认（人机协同）"
+    }
+  },
+  "annotation_agreement": {
+    "kappa": 0.8453,
+    "n_items": 56
+  }
+}

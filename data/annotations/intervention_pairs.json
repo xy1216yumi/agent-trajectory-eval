@@ -1,0 +1,101 @@
+[
+  {
+    "task_id": "t29",
+    "config": "react",
+    "tier": "edge",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "verification",
+    "intervened_first_deviation": null
+  },
+  {
+    "task_id": "t28",
+    "config": "reflexion",
+    "tier": "edge",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "verification",
+    "intervened_first_deviation": null
+  },
+  {
+    "task_id": "t32",
+    "config": "direct",
+    "tier": "hard",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "perception",
+    "intervened_first_deviation": "planning"
+  },
+  {
+    "task_id": "t33",
+    "config": "direct",
+    "tier": "hard",
+    "baseline_success": false,
+    "intervened_success": false,
+    "intervened_at": "perception",
+    "intervened_first_deviation": "perception"
+  },
+  {
+    "task_id": "t37",
+    "config": "direct",
+    "tier": "edge",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "planning",
+    "intervened_first_deviation": "tool_use"
+  },
+  {
+    "task_id": "t41",
+    "config": "direct",
+    "tier": "hard",
+    "baseline_success": false,
+    "intervened_success": false,
+    "intervened_at": "perception",
+    "intervened_first_deviation": "perception"
+  },
+  {
+    "task_id": "t32",
+    "config": "react",
+    "tier": "hard",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "verification",
+    "intervened_first_deviation": null
+  },
+  {
+    "task_id": "t39",
+    "config": "react",
+    "tier": "edge",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "verification",
+    "intervened_first_deviation": null
+  },
+  {
+    "task_id": "t41",
+    "config": "react",
+    "tier": "hard",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "verification",
+    "intervened_first_deviation": null
+  },
+  {
+    "task_id": "t32",
+    "config": "reflexion",
+    "tier": "hard",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "tool_use",
+    "intervened_first_deviation": null
+  },
+  {
+    "task_id": "t41",
+    "config": "reflexion",
+    "tier": "hard",
+    "baseline_success": false,
+    "intervened_success": true,
+    "intervened_at": "verification",
+    "intervened_first_deviation": null
+  }
+]
